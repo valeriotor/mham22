@@ -115,8 +115,9 @@ class Recording:
                 print("Please mute this message by setting mute=True in your algorithm submission")
         else:
             if no_labels:
-                print("Loaded data from file that does not contain labels.")
-                print("Please mute this message by setting mute=True in your algorithm submission")
+                if not(mute):
+                    print("Loaded data from file that does not contain labels.")
+                    print("Please mute this message by setting mute=True in your algorithm submission")
             else:
                 self.addLabels(filename)
 

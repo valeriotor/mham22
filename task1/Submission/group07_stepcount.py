@@ -14,7 +14,6 @@ print(filename)
 # IMPORTANT: To allow grading, the two arguments no_labels and mute must be set True in the constructor when loading the data
 trace = Recording(filename, no_labels=True, mute=True)
 stepCount = 0 # <- here goes your detected stepcount
-#print(trace.data["ax"].timestamps)
 
 import matplotlib.pyplot as plt
 import scipy.signal as signal
@@ -185,7 +184,7 @@ for walk in walk_list:
         ts = int(x_axis[step[0]]*2)/2.0
         en1 = energies[ts]
         en2 = energies[ts-0.5]
-        if (en1 > avg*0.5 or (ts > 0 and en2 > avg*0.5) or (i == 0 and energies[ts+0.5] > 0.5)) and (en1 < avg*2 or (ts > 0 and en2 < avg*2)): 
+        if (en1 > avg*0.5 or (ts > 0 and en2 > avg*0.5) or (i == 0 and energies[ts+0.5] > avg*0.5)) and (en1 < avg*2 or (ts > 0 and en2 < avg*2)): 
             # the i==0 part is because the first step might have less energy, so we compensate by looking at the subsequent window
             step_sum += 1
         

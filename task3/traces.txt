@@ -1,0 +1,914 @@
+Note: "Total" energy is calculated from 0.7 to 10 (to exclude the DC component)
+Walk energy is from 1.4 to 2.25
+Running energy is from 2.55 to 3.45
+Low frequency energy is from 0.7 to 1.15
+
+Trace 0
+{'board_loc': 2, 'path_idx': 1, 'activities': [1], 'gender': 'm', 'body_height': 180, 'legi': 'c7ed8'}
+Walking: True, Energy: 765239.8965832432, Percentage over Total: 28.06532899031847
+Running: False, Energy: 508980.68386472756, Percentage over Total: 18.66697019609322
+Low frequency energy: 257093.0396739687, Percentage over Total: 9.428939567562177
+Trace 1
+{'board_loc': 1, 'path_idx': 4, 'activities': [1], 'gender': 'm', 'body_height': 182, 'legi': '460e6'}
+Walking: True, Energy: 682680.8701886092, Percentage over Total: 34.056649419006206
+Running: False, Energy: 146928.73652050877, Percentage over Total: 7.329779825050666
+Low frequency energy: 38572.5835627246, Percentage over Total: 1.9242562856904142
+Trace 2
+{'board_loc': 0, 'path_idx': 0, 'activities': [0, 1], 'gender': 'f', 'body_height': 165, 'legi': 'ab166'}
+Walking: True, Energy: 942642.2236755014, Percentage over Total: 35.72476019446286
+Running: False, Energy: 257184.88385012985, Percentage over Total: 9.7469305643469
+Low frequency energy: 139908.88809520323, Percentage over Total: 5.302342024088746
+Trace 3
+{'board_loc': 1, 'path_idx': 1, 'activities': [1], 'gender': 'f', 'body_height': 181, 'legi': 'c9555'}
+Walking: True, Energy: 619377.062047789, Percentage over Total: 35.92699412918884
+Running: False, Energy: 165015.6776555715, Percentage over Total: 9.57174174767617
+Low frequency energy: 53202.1255734209, Percentage over Total: 3.08599166849544
+Trace 4
+{'board_loc': 1, 'path_idx': 3, 'activities': [1], 'gender': 'm', 'body_height': 180, 'legi': '3829e'}
+Walking: True, Energy: 597161.0599813317, Percentage over Total: 35.027276134281635
+Running: False, Energy: 157519.69626639294, Percentage over Total: 9.239527269047992
+Low frequency energy: 26719.785116187824, Percentage over Total: 1.5672845304793281
+Trace 5
+{'board_loc': 0, 'path_idx': 1, 'activities': [1, 0, 1], 'gender': 'f', 'body_height': 167, 'legi': '2b6fe'}
+Walking: True, Energy: 651762.6071789496, Percentage over Total: 43.91934330773396
+Running: False, Energy: 132487.75171040648, Percentage over Total: 8.927752202024596
+Low frequency energy: 59508.27906682443, Percentage over Total: 4.009994604171444
+Trace 6
+{'board_loc': 0, 'path_idx': 3, 'activities': [0, 1], 'gender': 'm', 'body_height': 175, 'legi': 'acba9'}
+Walking: True, Energy: 697791.6895094907, Percentage over Total: 33.167157351961485
+Running: False, Energy: 275462.3270076661, Percentage over Total: 13.093165885685815
+Low frequency energy: 240116.429965663, Percentage over Total: 11.413118750469248
+Trace 7
+{'board_loc': 1, 'path_idx': 4, 'activities': [0, 1], 'gender': 'm', 'body_height': 175, 'legi': 'acba9'}
+Walking: True, Energy: 944309.3478581613, Percentage over Total: 26.762247025231755
+Running: False, Energy: 306454.4413658912, Percentage over Total: 8.68508765736084
+Low frequency energy: 61030.51680120712, Percentage over Total: 1.729638460549044
+Trace 8
+{'board_loc': 1, 'path_idx': 0, 'activities': [1], 'gender': 'f', 'body_height': 157, 'legi': '8a2d7'}
+Walking: True, Energy: 820938.0007425469, Percentage over Total: 38.39070426293186
+Running: False, Energy: 102632.36946449998, Percentage over Total: 4.799545081786553
+Low frequency energy: 17321.541420527912, Percentage over Total: 0.8100321503598626
+Trace 9
+{'board_loc': 0, 'path_idx': 3, 'activities': [1], 'gender': 'f', 'body_height': 170, 'legi': '4a916'}
+Walking: True, Energy: 642495.3214443628, Percentage over Total: 29.31422440872868
+Running: False, Energy: 329952.166638814, Percentage over Total: 15.054260372281966
+Low frequency energy: 72776.99456611132, Percentage over Total: 3.3204928958981657
+Trace 10
+{'board_loc': 1, 'path_idx': 3, 'activities': [1], 'gender': 'm', 'body_height': 182, 'legi': '460e6'}
+Walking: True, Energy: 660937.1464011054, Percentage over Total: 36.02913072639451
+Running: False, Energy: 189178.42008120782, Percentage over Total: 10.3125298144193
+Low frequency energy: 32842.295609265064, Percentage over Total: 1.790305429652765
+Trace 11
+{'board_loc': 0, 'path_idx': 3, 'activities': [2], 'gender': 'm', 'body_height': 182, 'legi': '460e6'}
+Walking: False, Energy: 97332.81545235658, Percentage over Total: 7.1901717390529605
+Running: True, Energy: 316167.50990714855, Percentage over Total: 23.355932775353477
+Low frequency energy: 35462.89655336617, Percentage over Total: 2.6197158214105527
+Trace 12
+{'board_loc': 1, 'path_idx': 1, 'activities': [0, 1, 2], 'gender': 'f', 'body_height': 170, 'legi': '24b9d'}
+Walking: True, Energy: 741146.3249988321, Percentage over Total: 25.825705717144174
+Running: True, Energy: 533759.3515496199, Percentage over Total: 18.599177344522232
+Low frequency energy: 59148.72653311879, Percentage over Total: 2.061074248719469
+Trace 13
+{'board_loc': 2, 'path_idx': 3, 'activities': [1], 'gender': 'm', 'body_height': 180, 'legi': '3829e'}
+Walking: True, Energy: 935152.8053259957, Percentage over Total: 27.188535606261297
+Running: False, Energy: 528736.7270461783, Percentage over Total: 15.372436726660656
+Low frequency energy: 278086.65806381014, Percentage over Total: 8.085062635040074
+Trace 14
+{'board_loc': 2, 'path_idx': 4, 'activities': [1], 'gender': 'm', 'body_height': 175, 'legi': 'acba9'}
+Walking: True, Energy: 987201.1221276864, Percentage over Total: 26.61640166936233
+Running: False, Energy: 664870.8237755384, Percentage over Total: 17.9259003127031
+Low frequency energy: 445711.59546222, Percentage over Total: 12.017043525990204
+Trace 15
+{'board_loc': 0, 'path_idx': 2, 'activities': [1], 'gender': 'f', 'body_height': 168, 'legi': 'd23c4'}
+Walking: True, Energy: 676870.8269295989, Percentage over Total: 27.30888711262843
+Running: False, Energy: 286076.8016558363, Percentage over Total: 11.541994086817981
+Low frequency energy: 170071.73122300606, Percentage over Total: 6.861678069486996
+Trace 16
+{'board_loc': 1, 'path_idx': 1, 'activities': [1], 'gender': 'm', 'body_height': 185, 'legi': 'def42'}
+Walking: True, Energy: 717789.6507075442, Percentage over Total: 38.03208963946342
+Running: False, Energy: 116942.72952364864, Percentage over Total: 6.196211337879888
+Low frequency energy: 40199.74433930512, Percentage over Total: 2.1299837336591674
+Trace 17
+{'board_loc': 2, 'path_idx': 0, 'activities': [1], 'gender': 'f', 'body_height': 168, 'legi': 'ea614'}
+Walking: True, Energy: 713940.9194153873, Percentage over Total: 28.78084792976307
+Running: False, Energy: 465576.7262180538, Percentage over Total: 18.768629997971146
+Low frequency energy: 279915.4456680062, Percentage over Total: 11.2841324203123
+Trace 18
+{'board_loc': 1, 'path_idx': 0, 'activities': [0, 1], 'gender': 'm', 'body_height': 185, 'legi': '7eda8'}
+Walking: True, Energy: 884613.8088998995, Percentage over Total: 29.106721498137652
+Running: False, Energy: 165493.698926369, Percentage over Total: 5.445290312997523
+Low frequency energy: 51356.74047385218, Percentage over Total: 1.6898067009416309
+Trace 19
+{'board_loc': 1, 'path_idx': 1, 'activities': [1, 2], 'gender': 'm', 'body_height': 175, 'legi': 'acba9'}
+Walking: True, Energy: 677459.9296156971, Percentage over Total: 23.930287924070473
+Running: True, Energy: 440937.2029939798, Percentage over Total: 15.575466183019772
+Low frequency energy: 44516.12820820005, Percentage over Total: 1.5724675640836296
+Trace 20
+{'board_loc': 2, 'path_idx': 0, 'activities': [1], 'gender': 'm', 'body_height': 190, 'legi': '96d60'}
+Walking: True, Energy: 495798.8641892301, Percentage over Total: 27.148044682911074
+Running: False, Energy: 334412.6428965133, Percentage over Total: 18.311154033664558
+Low frequency energy: 187376.46822163046, Percentage over Total: 10.260016912554658
+Trace 21
+{'board_loc': 0, 'path_idx': 1, 'activities': [1], 'gender': 'm', 'body_height': 173, 'legi': '4bba4'}
+Walking: True, Energy: 825453.803634935, Percentage over Total: 30.520663224879016
+Running: False, Energy: 332115.4736670262, Percentage over Total: 12.279772022281938
+Low frequency energy: 213984.4305410785, Percentage over Total: 7.911946993462699
+Trace 22
+{'board_loc': 2, 'path_idx': 3, 'activities': [0, 2], 'gender': 'f', 'body_height': 181, 'legi': 'ba008'}
+Walking: False, Energy: 153334.77578689446, Percentage over Total: 9.558794770196405
+Running: True, Energy: 263637.3235023162, Percentage over Total: 16.434987146196402
+Low frequency energy: 40326.335240395245, Percentage over Total: 2.5139187142570125
+Trace 23
+{'board_loc': 2, 'path_idx': 0, 'activities': [0, 1], 'gender': 'm', 'body_height': 182, 'legi': '37289'}
+Walking: True, Energy: 854602.0291648718, Percentage over Total: 23.841845419780753
+Running: False, Energy: 444542.80136308714, Percentage over Total: 12.40193726538683
+Low frequency energy: 434033.9797043238, Percentage over Total: 12.108760215740551
+Trace 24
+{'board_loc': 0, 'path_idx': 0, 'activities': [1, 3], 'gender': 'f', 'body_height': 171, 'legi': '44f05'}
+Walking: True, Energy: 305618.60193087335, Percentage over Total: 23.682710665611417
+Running: False, Energy: 125103.18508142467, Percentage over Total: 9.694378931489108
+Low frequency energy: 111894.60320586116, Percentage over Total: 8.670831866992149
+Cycling!!
+Trace 25
+{'board_loc': 2, 'path_idx': 3, 'activities': [1], 'gender': 'm', 'body_height': 173, 'legi': '4bba4'}
+Walking: True, Energy: 787594.07321572, Percentage over Total: 21.64653741970518
+Running: False, Energy: 624963.4861750134, Percentage over Total: 17.17673602367429
+Low frequency energy: 326508.9272369633, Percentage over Total: 8.97389651809489
+Trace 26
+{'board_loc': 0, 'path_idx': 1, 'activities': [1, 3], 'gender': 'f', 'body_height': 171, 'legi': '44f05'}
+Walking: True, Energy: 420326.09201344266, Percentage over Total: 28.175520221737624
+Running: False, Energy: 143458.63987114595, Percentage over Total: 9.616395188103569
+Low frequency energy: 119196.97631524279, Percentage over Total: 7.990074564375832
+Cycling!!
+Trace 27
+{'board_loc': 1, 'path_idx': 0, 'activities': [1, 3], 'gender': 'm', 'body_height': 182, 'legi': 'ecc76'}
+Walking: True, Energy: 134924.67248653612, Percentage over Total: 19.0479765048625
+Running: False, Energy: 67790.27985941937, Percentage over Total: 9.57028565808916
+Low frequency energy: 27743.66078537758, Percentage over Total: 3.91670840521389
+Cycling!!
+Trace 28
+{'board_loc': 1, 'path_idx': 0, 'activities': [2], 'gender': 'm', 'body_height': 182, 'legi': '460e6'}
+Walking: False, Energy: 61408.47645477103, Percentage over Total: 5.418464542953942
+Running: True, Energy: 415324.98720969027, Percentage over Total: 36.646792868342914
+Low frequency energy: 16968.794010817608, Percentage over Total: 1.4972657520989667
+Trace 29
+{'board_loc': 2, 'path_idx': 4, 'activities': [1, 2], 'gender': 'm', 'body_height': 179, 'legi': '27db2'}
+Walking: True, Energy: 633586.2573827012, Percentage over Total: 23.02536904462009
+Running: True, Energy: 459113.81737777597, Percentage over Total: 16.684808035888803
+Low frequency energy: 234030.33843336138, Percentage over Total: 8.504974417099168
+Trace 30
+{'board_loc': 0, 'path_idx': 1, 'activities': [1], 'gender': 'f', 'body_height': 169, 'legi': '71e95'}
+Walking: True, Energy: 659213.7868520571, Percentage over Total: 47.94714414579103
+Running: False, Energy: 107392.53257584988, Percentage over Total: 7.811070311779485
+Low frequency energy: 62252.2321431864, Percentage over Total: 4.527843330188824
+Trace 31
+{'board_loc': 0, 'path_idx': 2, 'activities': [0, 1], 'gender': 'm', 'body_height': 189, 'legi': 'a180b'}
+Walking: True, Energy: 706691.4894464319, Percentage over Total: 35.05290458159155
+Running: False, Energy: 158683.85989777325, Percentage over Total: 7.870945501257405
+Low frequency energy: 143492.50205401966, Percentage over Total: 7.117432511623091
+Trace 32
+{'board_loc': 0, 'path_idx': 4, 'activities': [1, 2], 'gender': 'm', 'body_height': 182, 'legi': '37289'}
+Walking: True, Energy: 373554.8655137085, Percentage over Total: 16.77550611598933
+Running: True, Energy: 510427.9723305506, Percentage over Total: 22.92216850081144
+Low frequency energy: 127695.37157073832, Percentage over Total: 5.734511003685051
+Trace 33
+{'board_loc': 2, 'path_idx': 0, 'activities': [1, 2], 'gender': 'm', 'body_height': 178, 'legi': '24257'}
+Walking: True, Energy: 241195.2454096078, Percentage over Total: 15.253183203559242
+Running: True, Energy: 306729.0327990916, Percentage over Total: 19.39753879969604
+Low frequency energy: 80288.96572212948, Percentage over Total: 5.077472822087171
+Trace 34
+{'board_loc': 2, 'path_idx': 2, 'activities': [1], 'gender': 'm', 'body_height': 180, 'legi': '4a049'}
+Walking: True, Energy: 1030018.6759609906, Percentage over Total: 31.506090164910553
+Running: False, Energy: 601011.7158754705, Percentage over Total: 18.383675706533804
+Low frequency energy: 253373.4237246509, Percentage over Total: 7.750156496738382
+Trace 35
+{'board_loc': 1, 'path_idx': 1, 'activities': [1, 3], 'gender': 'm', 'body_height': 190, 'legi': '96d60'}
+Walking: True, Energy: 154323.72655586325, Percentage over Total: 21.585328927900072
+Running: False, Energy: 78587.97782903974, Percentage over Total: 10.992135746568334
+Low frequency energy: 21066.923240083608, Percentage over Total: 2.9466400130728974
+Cycling!!
+Trace 36
+{'board_loc': 1, 'path_idx': 3, 'activities': [1], 'gender': 'f', 'body_height': 167, 'legi': '2b6fe'}
+Walking: True, Energy: 692561.600588797, Percentage over Total: 36.38651479242503
+Running: False, Energy: 125459.65418500242, Percentage over Total: 6.591528549913896
+Low frequency energy: 35464.09152362613, Percentage over Total: 1.8632489726939265
+Trace 37
+{'board_loc': 2, 'path_idx': 3, 'activities': [1], 'gender': 'f', 'body_height': 171, 'legi': '44f05'}
+Walking: True, Energy: 775273.4551460576, Percentage over Total: 24.48175976500591
+Running: False, Energy: 538080.8456160544, Percentage over Total: 16.991638123404755
+Low frequency energy: 294941.1681217903, Percentage over Total: 9.313718630296131
+Trace 38
+{'board_loc': 2, 'path_idx': 3, 'activities': [2], 'gender': 'm', 'body_height': 178, 'legi': '24257'}
+Walking: False, Energy: 93734.14917909051, Percentage over Total: 9.46031807769953
+Running: True, Energy: 163296.5306964439, Percentage over Total: 16.48104916834082
+Low frequency energy: 33345.861438605345, Percentage over Total: 3.3655018853520744
+Trace 39
+{'board_loc': 0, 'path_idx': 2, 'activities': [1], 'gender': 'm', 'body_height': 175, 'legi': 'acba9'}
+Walking: True, Energy: 708023.4305046474, Percentage over Total: 40.33906528421292
+Running: False, Energy: 237421.28523238082, Percentage over Total: 13.526886699250104
+Low frequency energy: 113048.17015881826, Percentage over Total: 6.440828537336728
+Trace 40
+{'board_loc': 1, 'path_idx': 2, 'activities': [0, 1], 'gender': 'm', 'body_height': 185, 'legi': '7eda8'}
+Walking: True, Energy: 848411.8587366662, Percentage over Total: 28.490911836277164
+Running: False, Energy: 137827.14201058281, Percentage over Total: 4.628437133725156
+Low frequency energy: 41851.95850466851, Percentage over Total: 1.4054500154059533
+Trace 41
+{'board_loc': 2, 'path_idx': 1, 'activities': [0, 1], 'gender': 'm', 'body_height': 178, 'legi': '24257'}
+Walking: True, Energy: 1779132.9967237846, Percentage over Total: 30.06187649395509
+Running: False, Energy: 1277006.5000177973, Percentage over Total: 21.577482827987208
+Low frequency energy: 440511.1659184413, Percentage over Total: 7.443284053768967
+Trace 42
+{'board_loc': 2, 'path_idx': 1, 'activities': [1, 0, 1], 'gender': 'f', 'body_height': 167, 'legi': '2b6fe'}
+Walking: True, Energy: 932871.8825293795, Percentage over Total: 26.9113124669583
+Running: False, Energy: 781596.9464053412, Percentage over Total: 22.547361585069712
+Low frequency energy: 270957.29008869344, Percentage over Total: 7.816524900510598
+Trace 43
+{'board_loc': 0, 'path_idx': 3, 'activities': [0, 1, 2], 'gender': 'm', 'body_height': 185, 'legi': '7eda8'}
+Walking: True, Energy: 415017.00738176913, Percentage over Total: 18.38054199631549
+Running: True, Energy: 486764.7723864528, Percentage over Total: 21.558153478143872
+Low frequency energy: 114324.54243757618, Percentage over Total: 5.0632793743568625
+Trace 44
+{'board_loc': 0, 'path_idx': 3, 'activities': [1, 2], 'gender': 'm', 'body_height': 177, 'legi': '949d8'}
+Walking: True, Energy: 154924.47212231715, Percentage over Total: 10.733556733597409
+Running: True, Energy: 232231.76228867294, Percentage over Total: 16.08960005944538
+Low frequency energy: 75501.10428319537, Percentage over Total: 5.230906229153406
+Trace 45
+{'board_loc': 2, 'path_idx': 4, 'activities': [1], 'gender': 'm', 'body_height': 190, 'legi': '96d60'}
+Walking: True, Energy: 748680.9056155632, Percentage over Total: 25.471727938913176
+Running: False, Energy: 474014.3895758995, Percentage over Total: 16.126984780625783
+Low frequency energy: 302028.1681439121, Percentage over Total: 10.275645166247088
+Trace 46
+{'board_loc': 2, 'path_idx': 0, 'activities': [1, 2, 1], 'gender': 'f', 'body_height': 167, 'legi': '2b6fe'}
+Walking: True, Energy: 663736.4623690797, Percentage over Total: 22.565093867849413
+Running: True, Energy: 838878.0085390734, Percentage over Total: 28.51939298135597
+Low frequency energy: 162070.4118012033, Percentage over Total: 5.509918865149769
+Trace 47
+{'board_loc': 1, 'path_idx': 2, 'activities': [1, 2], 'gender': 'm', 'body_height': 170, 'legi': '23193'}
+Walking: True, Energy: 514288.4487272314, Percentage over Total: 23.299410651612217
+Running: True, Energy: 440802.49090276886, Percentage over Total: 19.970190419821016
+Low frequency energy: 36021.74926566722, Percentage over Total: 1.631935406302178
+Trace 48
+{'board_loc': 0, 'path_idx': 4, 'activities': [0, 1], 'gender': 'm', 'body_height': 190, 'legi': '96d60'}
+Walking: True, Energy: 279013.9051934353, Percentage over Total: 27.350496473073093
+Running: False, Energy: 137705.07518096152, Percentage over Total: 13.498618179800193
+Low frequency energy: 100714.22347775813, Percentage over Total: 9.872568939196832
+Trace 49
+{'board_loc': 2, 'path_idx': 1, 'activities': [1], 'gender': 'f', 'body_height': 157, 'legi': '8a2d7'}
+Walking: True, Energy: 999699.0655294424, Percentage over Total: 32.586506405860035
+Running: False, Energy: 600836.0104974244, Percentage over Total: 19.58504031868486
+Low frequency energy: 235370.23119647577, Percentage over Total: 7.6722023767929866
+Trace 50
+{'board_loc': 0, 'path_idx': 3, 'activities': [1, 0, 1], 'gender': 'f', 'body_height': 167, 'legi': '2b6fe'}
+Walking: True, Energy: 784174.8476171892, Percentage over Total: 41.71769501266113
+Running: False, Energy: 221357.97657416665, Percentage over Total: 11.77612949892637
+Low frequency energy: 105003.24745972818, Percentage over Total: 5.586118282388919
+Trace 51
+{'board_loc': 2, 'path_idx': 0, 'activities': [1], 'gender': 'm', 'body_height': 170, 'legi': 'f23a6'}
+Walking: True, Energy: 951352.8508630068, Percentage over Total: 29.496863670491358
+Running: False, Energy: 651444.5813702677, Percentage over Total: 20.19815464696191
+Low frequency energy: 333269.8927167583, Percentage over Total: 10.33309206150796
+Trace 52
+{'body_height': 185, 'board_loc': 2, 'path_idx': 4, 'activities': [0, 1], 'legi': '8e2a0', 'gender': 'm'}
+Walking: True, Energy: 1341246.7664517288, Percentage over Total: 19.76526728159667
+Running: False, Energy: 936157.1994825915, Percentage over Total: 13.795669617392788
+Low frequency energy: 811511.6579813248, Percentage over Total: 11.958832053378012
+Trace 53
+{'board_loc': 0, 'path_idx': 3, 'activities': [0, 1], 'gender': 'm', 'body_height': 170, 'legi': '23193'}
+Walking: True, Energy: 712054.2765532021, Percentage over Total: 25.19638128058175
+Running: False, Energy: 325105.1860200001, Percentage over Total: 11.504002564111193
+Low frequency energy: 376696.4443629356, Percentage over Total: 13.329583926034903
+Trace 54
+{'board_loc': 1, 'path_idx': 3, 'activities': [1, 2], 'gender': 'm', 'body_height': 185, 'legi': '7eda8'}
+Walking: True, Energy: 438927.2287952164, Percentage over Total: 18.941266925371018
+Running: True, Energy: 456566.22367436165, Percentage over Total: 19.702452125063928
+Low frequency energy: 28284.206360905428, Percentage over Total: 1.2205638367997853
+Trace 55
+{'board_loc': 0, 'path_idx': 3, 'activities': [1], 'gender': 'f', 'body_height': 168, 'legi': 'd23c4'}
+Walking: True, Energy: 547241.9296805289, Percentage over Total: 24.08700746912602
+Running: False, Energy: 231441.742755693, Percentage over Total: 10.18697340987443
+Low frequency energy: 219606.71315289184, Percentage over Total: 9.666051252819653
+Trace 56
+{'board_loc': 2, 'path_idx': 2, 'activities': [1], 'gender': 'm', 'body_height': 173, 'legi': '4bba4'}
+Walking: True, Energy: 1506476.6611726494, Percentage over Total: 29.936186872353737
+Running: False, Energy: 779873.6130813885, Percentage over Total: 15.497380623108457
+Low frequency energy: 366967.67010856647, Percentage over Total: 7.292255520195742
+Trace 57
+{'board_loc': 1, 'path_idx': 4, 'activities': [1], 'gender': 'm', 'body_height': 170, 'legi': 'acbf7'}
+Walking: True, Energy: 834263.1863417804, Percentage over Total: 24.050366432642623
+Running: False, Energy: 328071.3675514901, Percentage over Total: 9.457730767517111
+Low frequency energy: 45737.054007841994, Percentage over Total: 1.3185202540958356
+Trace 58
+{'board_loc': 2, 'path_idx': 2, 'activities': [2], 'gender': 'm', 'body_height': 190, 'legi': '96d60'}
+Walking: False, Energy: 88631.74959091704, Percentage over Total: 6.198868445870104
+Running: True, Energy: 251597.3972469895, Percentage over Total: 17.59661942877001
+Low frequency energy: 34647.9486409205, Percentage over Total: 2.42326340770261
+Trace 59
+{'board_loc': 2, 'path_idx': 0, 'activities': [1], 'gender': 'm', 'body_height': 180, 'legi': 'c7ed8'}
+Walking: True, Energy: 711661.8395640133, Percentage over Total: 26.460305148800085
+Running: False, Energy: 509388.4975458254, Percentage over Total: 18.93957823087542
+Low frequency energy: 294335.3520225352, Percentage over Total: 10.943685325838288
+Trace 60
+{'board_loc': 2, 'path_idx': 4, 'activities': [2, 1], 'gender': 'f', 'body_height': 167, 'legi': '2b6fe'}
+Walking: True, Energy: 679595.7817325795, Percentage over Total: 22.633414732516407
+Running: True, Energy: 642996.9893234833, Percentage over Total: 21.414520104900394
+Low frequency energy: 214344.7334651236, Percentage over Total: 7.138586463675014
+Trace 61
+{'board_loc': 0, 'path_idx': 4, 'activities': [1], 'gender': 'f', 'body_height': 171, 'legi': '44f05'}
+Walking: True, Energy: 644220.3473021421, Percentage over Total: 32.45469114706239
+Running: False, Energy: 214321.67469127238, Percentage over Total: 10.79715005487734
+Low frequency energy: 164031.04083799425, Percentage over Total: 8.263596130147533
+Trace 62
+{'board_loc': 1, 'path_idx': 4, 'activities': [1], 'gender': 'f', 'body_height': 181, 'legi': 'c9555'}
+Walking: True, Energy: 989947.4446344074, Percentage over Total: 34.14315565752361
+Running: False, Energy: 257313.05846668495, Percentage over Total: 8.8746931522067
+Low frequency energy: 50605.019142972546, Percentage over Total: 1.7453603774779824
+Trace 63
+{'board_loc': 0, 'path_idx': 1, 'activities': [0, 1], 'gender': 'm', 'body_height': 171, 'legi': '5ba99'}
+Walking: True, Energy: 599345.2207032398, Percentage over Total: 29.332684196137897
+Running: False, Energy: 228600.0550502307, Percentage over Total: 11.1879647828681
+Low frequency energy: 189204.34181660166, Percentage over Total: 9.259890652890467
+Trace 64
+{'board_loc': 2, 'path_idx': 3, 'activities': [0, 1, 2], 'gender': 'm', 'body_height': 189, 'legi': 'a180b'}
+Walking: True, Energy: 572018.581806371, Percentage over Total: 20.157298391349517
+Running: True, Energy: 445338.7858355124, Percentage over Total: 15.693243326081996
+Low frequency energy: 213745.07865442272, Percentage over Total: 7.532138757649855
+Trace 65
+{'board_loc': 0, 'path_idx': 1, 'activities': [1], 'gender': 'm', 'body_height': 180, 'legi': 'c7ed8'}
+Walking: True, Energy: 633788.9557523422, Percentage over Total: 46.066085016090774
+Running: False, Energy: 144061.27849052844, Percentage over Total: 10.47089735824398
+Low frequency energy: 139234.93662442575, Percentage over Total: 10.120101288507035
+Trace 66
+{'board_loc': 1, 'path_idx': 4, 'activities': [1], 'gender': 'm', 'body_height': 190, 'legi': '47f1c'}
+Walking: True, Energy: 670515.5006619635, Percentage over Total: 26.253274716382737
+Running: False, Energy: 252319.6183918806, Percentage over Total: 9.879288773242633
+Low frequency energy: 56142.06291605076, Percentage over Total: 2.1981788630157095
+Trace 67
+{'board_loc': 1, 'path_idx': 3, 'activities': [0, 1], 'gender': 'm', 'body_height': 194, 'legi': '174ca'}
+Walking: True, Energy: 715945.412569331, Percentage over Total: 20.69366993304944
+Running: False, Energy: 266090.28463848593, Percentage over Total: 7.691067539547611
+Low frequency energy: 78900.12225772251, Percentage over Total: 2.2805273405120756
+Trace 68
+{'board_loc': 0, 'path_idx': 4, 'activities': [0, 1], 'gender': 'f', 'body_height': 157, 'legi': '8a2d7'}
+Walking: True, Energy: 821397.2354879134, Percentage over Total: 42.37173443291454
+Running: False, Energy: 223205.2574996255, Percentage over Total: 11.51403180604399
+Low frequency energy: 54958.501229292364, Percentage over Total: 2.8350314784482245
+Trace 69
+{'board_loc': 2, 'path_idx': 1, 'activities': [0, 1, 2], 'gender': 'f', 'body_height': 170, 'legi': '24b9d'}
+Walking: True, Energy: 726205.6357057134, Percentage over Total: 20.938159821532164
+Running: True, Energy: 730955.2546950221, Percentage over Total: 21.075102137316986
+Low frequency energy: 289090.96073302306, Percentage over Total: 8.335149771877065
+Trace 70
+{'board_loc': 0, 'path_idx': 4, 'activities': [1], 'gender': 'm', 'body_height': 190, 'legi': '47f1c'}
+Walking: True, Energy: 492561.04746203223, Percentage over Total: 28.021605383103182
+Running: False, Energy: 238957.85354640256, Percentage over Total: 13.594218848145516
+Low frequency energy: 185156.48977531042, Percentage over Total: 10.533480301249888
+Trace 71
+{'board_loc': 1, 'path_idx': 2, 'activities': [1], 'gender': 'm', 'body_height': 170, 'legi': 'acbf7'}
+Walking: True, Energy: 741545.4904688549, Percentage over Total: 25.64445878643387
+Running: False, Energy: 334194.89231662964, Percentage over Total: 11.55727767588719
+Low frequency energy: 63218.0891692258, Percentage over Total: 2.186236317386658
+Trace 72
+{'board_loc': 1, 'path_idx': 2, 'activities': [2], 'gender': 'm', 'body_height': 182, 'legi': '460e6'}
+Walking: False, Energy: 54507.03330745806, Percentage over Total: 4.822677647190996
+Running: True, Energy: 411497.2182955606, Percentage over Total: 36.40848375220116
+Low frequency energy: 24353.062180917932, Percentage over Total: 2.154712181051603
+Trace 73
+{'board_loc': 2, 'path_idx': 0, 'activities': [1, 2], 'gender': 'm', 'body_height': 179, 'legi': '27db2'}
+Walking: True, Energy: 592952.7801177269, Percentage over Total: 19.922031504321204
+Running: True, Energy: 570968.227698555, Percentage over Total: 19.18339436391318
+Low frequency energy: 209003.34402478364, Percentage over Total: 7.022095761729176
+Trace 74
+{'board_loc': 2, 'path_idx': 0, 'activities': [0, 1], 'gender': 'f', 'body_height': 157, 'legi': '8a2d7'}
+Walking: True, Energy: 1172853.4225171106, Percentage over Total: 27.272807730648402
+Running: False, Energy: 1116415.110357706, Percentage over Total: 25.96042614347415
+Low frequency energy: 466201.67570808897, Percentage over Total: 10.840765283359453
+Trace 75
+{'board_loc': 0, 'path_idx': 2, 'activities': [1], 'gender': 'f', 'body_height': 171, 'legi': '44f05'}
+Walking: True, Energy: 563922.1708567907, Percentage over Total: 33.858235739096806
+Running: False, Energy: 197952.00237701213, Percentage over Total: 11.88516059108659
+Low frequency energy: 92316.27442829261, Percentage over Total: 5.5427261840039534
+Trace 76
+{'body_height': 185, 'board_loc': 0, 'path_idx': 1, 'activities': [0, 1], 'legi': '8e2a0', 'gender': 'm'}
+Walking: True, Energy: 1159673.9812621186, Percentage over Total: 34.28492486705721
+Running: False, Energy: 338125.5087006335, Percentage over Total: 9.996436799263211
+Low frequency energy: 335480.9718008761, Percentage over Total: 9.918252973135056
+Trace 77
+{'board_loc': 1, 'path_idx': 3, 'activities': [0, 1, 2], 'gender': 'm', 'body_height': 185, 'legi': '02597'}
+Walking: True, Energy: 640937.280054635, Percentage over Total: 28.089891210532343
+Running: True, Energy: 338246.5257021031, Percentage over Total: 14.82408404844651
+Low frequency energy: 43218.16664219751, Percentage over Total: 1.8940911023220592
+Trace 78
+{'board_loc': 1, 'path_idx': 1, 'activities': [1], 'gender': 'm', 'body_height': 180, 'legi': 'c7ed8'}
+Walking: True, Energy: 630735.9246718462, Percentage over Total: 43.282168203107545
+Running: False, Energy: 141538.54124229786, Percentage over Total: 9.7126145977159
+Low frequency energy: 38075.77140980077, Percentage over Total: 2.6128239698404343
+Trace 79
+{'board_loc': 2, 'path_idx': 1, 'activities': [1], 'gender': 'm', 'body_height': 185, 'legi': 'def42'}
+Walking: True, Energy: 910873.2513929155, Percentage over Total: 30.717123597907246
+Running: False, Energy: 585564.1815044892, Percentage over Total: 19.74681692570853
+Low frequency energy: 353519.51284801733, Percentage over Total: 11.921639540757916
+Trace 80
+{'board_loc': 2, 'path_idx': 4, 'activities': [0, 1], 'gender': 'm', 'body_height': 185, 'legi': '02597'}
+Walking: True, Energy: 973877.7672764143, Percentage over Total: 27.693513050821927
+Running: False, Energy: 562290.6164000232, Percentage over Total: 15.989483533624016
+Low frequency energy: 345936.7759894667, Percentage over Total: 9.837173557638492
+Trace 81
+{'board_loc': 1, 'path_idx': 0, 'activities': [0, 1, 2], 'gender': 'f', 'body_height': 170, 'legi': '24b9d'}
+Walking: True, Energy: 636317.1993592458, Percentage over Total: 21.58061346380753
+Running: True, Energy: 647968.2232057274, Percentage over Total: 21.97575639305997
+Low frequency energy: 50711.34736545901, Percentage over Total: 1.719868623423755
+Trace 82
+{'board_loc': 0, 'path_idx': 2, 'activities': [0, 1, 3], 'gender': 'm', 'body_height': 177, 'legi': '949d8'}
+Walking: True, Energy: 317327.16941000975, Percentage over Total: 27.14612328195011
+Running: False, Energy: 136270.09986242736, Percentage over Total: 11.657384828997936
+Low frequency energy: 128782.37893057894, Percentage over Total: 11.016838997720043
+Cycling!!
+Trace 83
+{'board_loc': 0, 'path_idx': 4, 'activities': [1], 'gender': 'm', 'body_height': 180, 'legi': '3829e'}
+Walking: True, Energy: 640937.3650957906, Percentage over Total: 38.531550630477845
+Running: False, Energy: 157042.7051340637, Percentage over Total: 9.441014479029503
+Low frequency energy: 118130.97967974578, Percentage over Total: 7.101738909975696
+Trace 84
+{'board_loc': 1, 'path_idx': 0, 'activities': [1, 2, 1], 'gender': 'f', 'body_height': 167, 'legi': '2b6fe'}
+Walking: True, Energy: 452892.1490928702, Percentage over Total: 25.19707580858262
+Running: True, Energy: 348807.63229967275, Percentage over Total: 19.40623694023189
+Low frequency energy: 21246.381393069543, Percentage over Total: 1.182062183439294
+Trace 85
+{'board_loc': 0, 'path_idx': 3, 'activities': [1], 'gender': 'f', 'body_height': 165, 'legi': 'ab166'}
+Walking: True, Energy: 749994.2101987307, Percentage over Total: 28.049678607456773
+Running: False, Energy: 302939.8616355988, Percentage over Total: 11.3299084722459
+Low frequency energy: 209144.30026752726, Percentage over Total: 7.821967590297944
+Trace 86
+{'board_loc': 0, 'path_idx': 3, 'activities': [0, 1], 'gender': 'm', 'body_height': 189, 'legi': 'efe2b'}
+Walking: True, Energy: 609502.3118005734, Percentage over Total: 36.92429317479346
+Running: False, Energy: 225049.95342584312, Percentage over Total: 13.633763643522292
+Low frequency energy: 57903.29027590197, Percentage over Total: 3.507842422478176
+Trace 87
+{'board_loc': 2, 'path_idx': 1, 'activities': [0, 1], 'gender': 'm', 'body_height': 182, 'legi': '37289'}
+Walking: True, Energy: 1013997.0518783653, Percentage over Total: 29.33724814616705
+Running: False, Energy: 573253.6534563617, Percentage over Total: 16.58553607329769
+Low frequency energy: 341559.4916821269, Percentage over Total: 9.882095362698593
+Trace 88
+{'board_loc': 1, 'path_idx': 4, 'activities': [0, 1, 2], 'gender': 'm', 'body_height': 179, 'legi': '27db2'}
+Walking: True, Energy: 489837.95282037434, Percentage over Total: 19.432383506254165
+Running: True, Energy: 677636.1166035996, Percentage over Total: 26.882532926881446
+Low frequency energy: 39928.14815712275, Percentage over Total: 1.5839913653409177
+Trace 89
+{'board_loc': 2, 'path_idx': 2, 'activities': [0, 1], 'gender': 'f', 'body_height': 177, 'legi': '57856'}
+Walking: True, Energy: 1013485.5432152393, Percentage over Total: 24.9924135576889
+Running: False, Energy: 771810.555873623, Percentage over Total: 19.03274173935281
+Low frequency energy: 347087.6531348402, Percentage over Total: 8.55913360184097
+Trace 90
+{'board_loc': 0, 'path_idx': 2, 'activities': [1], 'gender': 'f', 'body_height': 168, 'legi': 'ea614'}
+Walking: True, Energy: 323113.6895824454, Percentage over Total: 22.477764072869434
+Running: False, Energy: 186798.1601639311, Percentage over Total: 12.99482228325568
+Low frequency energy: 192125.52940058184, Percentage over Total: 13.365426663977663
+Trace 91
+{'board_loc': 1, 'path_idx': 4, 'activities': [1], 'gender': 'm', 'body_height': 185, 'legi': '02597'}
+Walking: True, Energy: 624094.6919090757, Percentage over Total: 28.259583219394194
+Running: False, Energy: 140691.79723808923, Percentage over Total: 6.370654331594867
+Low frequency energy: 31912.577886411276, Percentage over Total: 1.44503095799095
+Trace 92
+{'board_loc': 2, 'path_idx': 3, 'activities': [2], 'gender': 'm', 'body_height': 190, 'legi': '96d60'}
+Walking: False, Energy: 125572.1829269233, Percentage over Total: 9.21248788594024
+Running: True, Energy: 239662.1454374541, Percentage over Total: 17.582593215297308
+Low frequency energy: 30328.42182714668, Percentage over Total: 2.2250168163825843
+Trace 93
+{'board_loc': 1, 'path_idx': 1, 'activities': [1], 'gender': 'm', 'body_height': 180, 'legi': '3829e'}
+Walking: True, Energy: 675326.4797827778, Percentage over Total: 40.127603906602246
+Running: False, Energy: 121808.79580389, Percentage over Total: 7.237825343278272
+Low frequency energy: 34033.548728394395, Percentage over Total: 2.0222585723994357
+Trace 94
+{'board_loc': 2, 'path_idx': 2, 'activities': [0, 1, 2], 'gender': 'm', 'body_height': 177, 'legi': '949d8'}
+Walking: True, Energy: 629843.1642427448, Percentage over Total: 25.907269640716343
+Running: True, Energy: 508083.010782213, Percentage over Total: 20.898922632632836
+Low frequency energy: 214871.79585312368, Percentage over Total: 8.838297959532001
+Trace 95
+{'board_loc': 0, 'path_idx': 2, 'activities': [0, 1, 2], 'gender': 'm', 'body_height': 185, 'legi': '02597'}
+Walking: True, Energy: 548950.9991825769, Percentage over Total: 25.062735409059098
+Running: True, Energy: 293821.6773875589, Percentage over Total: 13.414630757163648
+Low frequency energy: 160759.79374098917, Percentage over Total: 7.339598945889313
+Trace 96
+{'board_loc': 2, 'path_idx': 2, 'activities': [1], 'gender': 'm', 'body_height': 175, 'legi': 'acba9'}
+Walking: True, Energy: 993948.740387439, Percentage over Total: 30.624435865176135
+Running: False, Energy: 708875.8009471497, Percentage over Total: 21.841087593731707
+Low frequency energy: 442667.22981467645, Percentage over Total: 13.638967119964834
+Trace 97
+{'board_loc': 1, 'path_idx': 4, 'activities': [1], 'gender': 'm', 'body_height': 190, 'legi': '96d60'}
+Walking: True, Energy: 707904.3888765906, Percentage over Total: 36.60368648083222
+Running: False, Energy: 245672.76804857535, Percentage over Total: 12.703027583709387
+Low frequency energy: 37396.72923003386, Percentage over Total: 1.933676600475728
+Trace 98
+{'board_loc': 1, 'path_idx': 3, 'activities': [1], 'gender': 'm', 'body_height': 170, 'legi': 'acbf7'}
+Walking: True, Energy: 709748.6564751435, Percentage over Total: 24.679621588232937
+Running: False, Energy: 373948.9118986038, Percentage over Total: 13.003078702287352
+Low frequency energy: 45716.54750179776, Percentage over Total: 1.5896713327619498
+Trace 99
+{'board_loc': 1, 'path_idx': 4, 'activities': [0, 1], 'gender': 'f', 'body_height': 165, 'legi': 'ab166'}
+Walking: True, Energy: 922856.4609012005, Percentage over Total: 30.350202964111933
+Running: False, Energy: 246810.63242549574, Percentage over Total: 8.116920783649983
+Low frequency energy: 59155.570009862146, Percentage over Total: 1.9454634954863907
+Trace 100
+{'board_loc': 2, 'path_idx': 4, 'activities': [0, 1], 'gender': 'm', 'body_height': 171, 'legi': '5ba99'}
+Walking: True, Energy: 1250032.837853438, Percentage over Total: 26.585144632076478
+Running: False, Energy: 824323.7110430707, Percentage over Total: 17.53135151182283
+Low frequency energy: 458247.52311124577, Percentage over Total: 9.745805318301281
+Trace 101
+{'board_loc': 1, 'path_idx': 4, 'activities': [1], 'gender': 'm', 'body_height': 173, 'legi': '4bba4'}
+Walking: True, Energy: 777119.4570763386, Percentage over Total: 20.6077487401835
+Running: False, Energy: 406970.07302824594, Percentage over Total: 10.792082135341994
+Low frequency energy: 79022.1795298165, Percentage over Total: 2.0955198146482146
+Trace 102
+{'board_loc': 0, 'path_idx': 1, 'activities': [1, 2], 'gender': 'f', 'body_height': 157, 'legi': '8a2d7'}
+Walking: True, Energy: 422046.4291658149, Percentage over Total: 26.337811862662402
+Running: True, Energy: 259162.60586291, Percentage over Total: 16.173045151799922
+Low frequency energy: 102675.32589600293, Percentage over Total: 6.407454795273301
+Trace 103
+{'board_loc': 0, 'path_idx': 3, 'activities': [0, 1], 'gender': 'm', 'body_height': 183, 'legi': '01850'}
+Walking: True, Energy: 642732.6236381015, Percentage over Total: 34.08819156292884
+Running: False, Energy: 238325.76207476165, Percentage over Total: 12.639928227075412
+Low frequency energy: 143673.10125829, Percentage over Total: 7.619896700451744
+Trace 104
+{'board_loc': 2, 'path_idx': 3, 'activities': [0, 1, 2], 'gender': 'f', 'body_height': 170, 'legi': '24b9d'}
+Walking: True, Energy: 883953.6576862542, Percentage over Total: 21.145669465472693
+Running: True, Energy: 899497.3918303839, Percentage over Total: 21.517501927064938
+Low frequency energy: 362476.92896757333, Percentage over Total: 8.671062404866975
+Trace 105
+{'board_loc': 1, 'path_idx': 2, 'activities': [1], 'gender': 'f', 'body_height': 181, 'legi': 'c9555'}
+Walking: True, Energy: 666319.4487710035, Percentage over Total: 33.18877556799331
+Running: False, Energy: 184381.1097218919, Percentage over Total: 9.183858104133611
+Low frequency energy: 52422.11082522229, Percentage over Total: 2.6110984366249648
+Trace 106
+{'board_loc': 0, 'path_idx': 0, 'activities': [1, 2], 'gender': 'm', 'body_height': 167, 'legi': 'c725f'}
+Walking: True, Energy: 706406.1848174563, Percentage over Total: 21.740870485116208
+Running: True, Energy: 589565.6744803251, Percentage over Total: 18.14490196551601
+Low frequency energy: 284182.4207261085, Percentage over Total: 8.746204854859378
+Trace 107
+{'board_loc': 1, 'path_idx': 0, 'activities': [0, 1], 'gender': 'm', 'body_height': 173, 'legi': '5bb89'}
+Walking: True, Energy: 361469.5956396481, Percentage over Total: 29.942018149896725
+Running: False, Energy: 70173.0450727934, Percentage over Total: 5.812722880564833
+Low frequency energy: 37585.53516076003, Percentage over Total: 3.113364967710771
+Trace 108
+{'board_loc': 1, 'path_idx': 1, 'activities': [0, 1], 'gender': 'f', 'body_height': 168, 'legi': 'ea614'}
+Walking: True, Energy: 767747.4366879596, Percentage over Total: 34.422120818013475
+Running: False, Energy: 122975.01090573073, Percentage over Total: 5.513610962030548
+Low frequency energy: 38112.02896574421, Percentage over Total: 1.7087609843908589
+Trace 109
+{'board_loc': 1, 'path_idx': 2, 'activities': [1], 'gender': 'm', 'body_height': 175, 'legi': 'acba9'}
+Walking: True, Energy: 734200.1783486855, Percentage over Total: 24.439650910232196
+Running: False, Energy: 159360.4290944864, Percentage over Total: 5.304702138228555
+Low frequency energy: 50486.035835949675, Percentage over Total: 1.6805513374393366
+Trace 110
+{'board_loc': 2, 'path_idx': 0, 'activities': [0, 1], 'gender': 'm', 'body_height': 171, 'legi': '5ba99'}
+Walking: True, Energy: 1081155.6318121715, Percentage over Total: 28.935120700725687
+Running: False, Energy: 746246.0998569528, Percentage over Total: 19.97188964886973
+Low frequency energy: 394119.69383783423, Percentage over Total: 10.547880967531212
+Trace 111
+{'board_loc': 2, 'path_idx': 1, 'activities': [0, 1], 'gender': 'f', 'body_height': 165, 'legi': 'ab166'}
+Walking: True, Energy: 551642.1232992845, Percentage over Total: 29.076662050316138
+Running: False, Energy: 396330.9672081395, Percentage over Total: 20.89032201649664
+Low frequency energy: 203203.18189694962, Percentage over Total: 10.710694484730235
+Trace 112
+{'board_loc': 1, 'path_idx': 1, 'activities': [1], 'gender': 'm', 'body_height': 173, 'legi': '4bba4'}
+Walking: True, Energy: 694214.2378037878, Percentage over Total: 20.852618474139188
+Running: False, Energy: 307217.45298764703, Percentage over Total: 9.228114300875035
+Low frequency energy: 81119.42911008731, Percentage over Total: 2.436643350075932
+Trace 113
+{'board_loc': 0, 'path_idx': 3, 'activities': [1, 2], 'gender': 'm', 'body_height': 189, 'legi': 'a180b'}
+Walking: True, Energy: 436668.360196529, Percentage over Total: 22.39388040613181
+Running: True, Energy: 226760.4813132963, Percentage over Total: 11.629070393562278
+Low frequency energy: 98009.63299363498, Percentage over Total: 5.0262766895236535
+Trace 114
+{'board_loc': 1, 'path_idx': 1, 'activities': [1], 'gender': 'm', 'body_height': 177, 'legi': 'a7a8d'}
+Walking: True, Energy: 672528.8896853838, Percentage over Total: 19.533978343125664
+Running: False, Energy: 291096.85175028455, Percentage over Total: 8.455071127877085
+Low frequency energy: 133563.27666210642, Percentage over Total: 3.8794201911162762
+Trace 115
+{'board_loc': 0, 'path_idx': 0, 'activities': [1], 'gender': 'm', 'body_height': 175, 'legi': 'acba9'}
+Walking: True, Energy: 590247.1136050918, Percentage over Total: 34.58475194480455
+Running: False, Energy: 245358.62643201527, Percentage over Total: 14.376465444855352
+Low frequency energy: 141924.5711077908, Percentage over Total: 8.315883252111473
+Trace 116
+{'board_loc': 0, 'path_idx': 0, 'activities': [1, 3], 'gender': 'm', 'body_height': 182, 'legi': 'ecc76'}
+Walking: True, Energy: 246876.94230844823, Percentage over Total: 27.8539661889331
+Running: False, Energy: 100858.23936318184, Percentage over Total: 11.379361567057341
+Low frequency energy: 62510.56360447315, Percentage over Total: 7.052773372876321
+Cycling!!
+Trace 117
+{'board_loc': 1, 'path_idx': 4, 'activities': [0, 1], 'gender': 'm', 'body_height': 185, 'legi': '7eda8'}
+Walking: True, Energy: 799029.9881696954, Percentage over Total: 29.73586905220557
+Running: False, Energy: 171126.61264141358, Percentage over Total: 6.368470045171671
+Low frequency energy: 43792.485881981695, Percentage over Total: 1.6297356105996488
+Trace 118
+{'board_loc': 0, 'path_idx': 1, 'activities': [1, 2], 'gender': 'm', 'body_height': 178, 'legi': '24257'}
+Walking: True, Energy: 257730.59272340316, Percentage over Total: 14.358360139055678
+Running: True, Energy: 322627.5600471488, Percentage over Total: 17.97381773343949
+Low frequency energy: 163763.8732124862, Percentage over Total: 9.123405353259848
+Trace 119
+{'board_loc': 0, 'path_idx': 4, 'activities': [2], 'gender': 'f', 'body_height': 181, 'legi': 'ba008'}
+Walking: False, Energy: 64728.20666910441, Percentage over Total: 4.886309091177991
+Running: True, Energy: 514543.0370737701, Percentage over Total: 38.84266920461376
+Low frequency energy: 25578.220551755257, Percentage over Total: 1.9308906896976252
+Trace 120
+{'board_loc': 0, 'path_idx': 1, 'activities': [1, 3], 'gender': 'm', 'body_height': 190, 'legi': '96d60'}
+Walking: True, Energy: 253639.02208776164, Percentage over Total: 24.42994623864193
+Running: False, Energy: 133515.73793807026, Percentage over Total: 12.859938794082922
+Low frequency energy: 99824.63538080727, Percentage over Total: 9.614886761396425
+Cycling!!
+Trace 121
+{'board_loc': 0, 'path_idx': 1, 'activities': [0, 1], 'gender': 'm', 'body_height': 189, 'legi': 'a180b'}
+Walking: True, Energy: 609807.1011364836, Percentage over Total: 32.736295678187446
+Running: False, Energy: 138560.5606446524, Percentage over Total: 7.438351364136624
+Low frequency energy: 115867.17334562841, Percentage over Total: 6.2201014697422305
+Trace 122
+{'board_loc': 2, 'path_idx': 4, 'activities': [1], 'gender': 'm', 'body_height': 185, 'legi': '7eda8'}
+Walking: True, Energy: 836821.9158329833, Percentage over Total: 21.467274609196917
+Running: False, Energy: 633800.5647308064, Percentage over Total: 16.259099472791352
+Low frequency energy: 419883.91477223055, Percentage over Total: 10.77142356319348
+Trace 123
+{'board_loc': 0, 'path_idx': 4, 'activities': [0, 1, 2], 'gender': 'm', 'body_height': 167, 'legi': 'c725f'}
+Walking: True, Energy: 821745.3672382329, Percentage over Total: 20.9903298048707
+Running: True, Energy: 696747.1661925219, Percentage over Total: 17.79742654119541
+Low frequency energy: 352920.5867473454, Percentage over Total: 9.014860084520105
+Trace 124
+{'board_loc': 1, 'path_idx': 0, 'activities': [1], 'gender': 'f', 'body_height': 181, 'legi': 'c9555'}
+Walking: True, Energy: 660361.0034413197, Percentage over Total: 37.48665046415644
+Running: False, Energy: 163481.39223671067, Percentage over Total: 9.28033269111083
+Low frequency energy: 44855.18526873096, Percentage over Total: 2.5462900487934603
+Trace 125
+{'board_loc': 0, 'path_idx': 2, 'activities': [1], 'gender': 'm', 'body_height': 189, 'legi': 'efe2b'}
+Walking: True, Energy: 728445.7414906062, Percentage over Total: 41.3233105424304
+Running: False, Energy: 168772.43413454387, Percentage over Total: 9.574132031402058
+Low frequency energy: 109481.30246940839, Percentage over Total: 6.210661416285396
+Trace 126
+{'board_loc': 0, 'path_idx': 0, 'activities': [1], 'gender': 'f', 'body_height': 167, 'legi': '2b6fe'}
+Walking: True, Energy: 602331.2864169265, Percentage over Total: 44.931140195614994
+Running: False, Energy: 125834.10516599413, Percentage over Total: 9.386644771909626
+Low frequency energy: 68100.97343093062, Percentage over Total: 5.080019008949504
+Trace 127
+{'board_loc': 2, 'path_idx': 0, 'activities': [1], 'gender': 'm', 'body_height': 180, 'legi': '3829e'}
+Walking: True, Energy: 913603.0101953713, Percentage over Total: 29.51140705006406
+Running: False, Energy: 626461.4355561705, Percentage over Total: 20.236096225112117
+Low frequency energy: 312487.9202755596, Percentage over Total: 10.094054102895212
+Trace 128
+{'board_loc': 2, 'path_idx': 2, 'activities': [1], 'gender': 'f', 'body_height': 171, 'legi': '44f05'}
+Walking: True, Energy: 1000894.2586852227, Percentage over Total: 31.256583592244223
+Running: False, Energy: 773733.2250675588, Percentage over Total: 24.162649568186524
+Low frequency energy: 313456.7487088457, Percentage over Total: 9.788833319357096
+Trace 129
+{'board_loc': 1, 'path_idx': 2, 'activities': [1], 'gender': 'm', 'body_height': 177, 'legi': 'a7a8d'}
+Walking: True, Energy: 667422.7550961288, Percentage over Total: 20.42860037571345
+Running: False, Energy: 257762.7870038626, Percentage over Total: 7.8896515397855005
+Low frequency energy: 105331.34919745139, Percentage over Total: 3.224001614208585
+Trace 130
+{'board_loc': 1, 'path_idx': 0, 'activities': [1], 'gender': 'm', 'body_height': 180, 'legi': '3829e'}
+Walking: True, Energy: 543010.5693962167, Percentage over Total: 41.10225540409091
+Running: False, Energy: 61613.66146180158, Percentage over Total: 4.663740620371444
+Low frequency energy: 29350.750655685635, Percentage over Total: 2.2216548217342766
+Trace 131
+{'board_loc': 0, 'path_idx': 2, 'activities': [1], 'gender': 'm', 'body_height': 173, 'legi': '4bba4'}
+Walking: True, Energy: 647124.4804046418, Percentage over Total: 34.352138550411844
+Running: False, Energy: 159653.8396127681, Percentage over Total: 8.47510947979229
+Low frequency energy: 132907.14173118776, Percentage over Total: 7.055280220946245
+Trace 132
+{'board_loc': 2, 'path_idx': 0, 'activities': [0, 1, 3], 'gender': 'm', 'body_height': 182, 'legi': 'ecc76'}
+Walking: True, Energy: 698990.5320523212, Percentage over Total: 28.77725134575589
+Running: False, Energy: 295430.76185249625, Percentage over Total: 12.16280464362722
+Low frequency energy: 316785.6265833458, Percentage over Total: 13.041978654768586
+Cycling!!
+Trace 133
+{'board_loc': 1, 'path_idx': 0, 'activities': [1], 'gender': 'm', 'body_height': 170, 'legi': '23193'}
+Walking: True, Energy: 622686.5176219052, Percentage over Total: 31.604098795538786
+Running: False, Energy: 129671.42494089395, Percentage over Total: 6.581399161236854
+Low frequency energy: 36427.35225301563, Percentage over Total: 1.8488494722206894
+Trace 134
+{'board_loc': 1, 'path_idx': 4, 'activities': [0, 1, 2], 'gender': 'f', 'body_height': 170, 'legi': '24b9d'}
+Walking: True, Energy: 378804.0196332282, Percentage over Total: 13.298326926658765
+Running: True, Energy: 733781.1932786256, Percentage over Total: 25.760186521518587
+Low frequency energy: 45238.84895761896, Percentage over Total: 1.5881589741488091
+Trace 135
+{'board_loc': 0, 'path_idx': 0, 'activities': [0, 1, 2], 'gender': 'm', 'body_height': 177, 'legi': '949d8'}
+Walking: True, Energy: 303787.6893052863, Percentage over Total: 18.754001207643658
+Running: True, Energy: 287031.28613688267, Percentage over Total: 17.71956295909368
+Low frequency energy: 82126.62650295199, Percentage over Total: 5.069997589890025
+Trace 136
+{'board_loc': 2, 'path_idx': 2, 'activities': [1], 'gender': 'm', 'body_height': 180, 'legi': '3829e'}
+Walking: True, Energy: 913543.1654695629, Percentage over Total: 29.44084243101633
+Running: False, Energy: 634869.1056194564, Percentage over Total: 20.459987014686305
+Low frequency energy: 290424.27086681203, Percentage over Total: 9.359530583689201
+Trace 137
+{'board_loc': 1, 'path_idx': 4, 'activities': [1, 3], 'gender': 'm', 'body_height': 182, 'legi': 'ecc76'}
+Walking: True, Energy: 389552.6137430266, Percentage over Total: 24.05375368008903
+Running: False, Energy: 153453.8763896662, Percentage over Total: 9.475335586804121
+Low frequency energy: 36621.47669348644, Percentage over Total: 2.261270875125819
+Cycling!!
+Trace 138
+{'board_loc': 1, 'path_idx': 2, 'activities': [1], 'gender': 'f', 'body_height': 165, 'legi': 'ab166'}
+Walking: True, Energy: 1004730.1542538758, Percentage over Total: 30.85535302714519
+Running: False, Energy: 280755.21391155245, Percentage over Total: 8.622017765442413
+Low frequency energy: 66322.90603346769, Percentage over Total: 2.036782384588144
+Trace 139
+{'board_loc': 0, 'path_idx': 0, 'activities': [1], 'gender': 'f', 'body_height': 157, 'legi': '8a2d7'}
+Walking: True, Energy: 561211.4264402051, Percentage over Total: 37.518397943071655
+Running: False, Energy: 165297.08259081648, Percentage over Total: 11.050526470582831
+Low frequency energy: 113990.63195799108, Percentage over Total: 7.620560968813065
+Trace 140
+{'board_loc': 2, 'path_idx': 4, 'activities': [1], 'gender': 'f', 'body_height': 181, 'legi': 'ba008'}
+Walking: True, Energy: 1048489.1971895618, Percentage over Total: 25.768707507852472
+Running: False, Energy: 641850.5387799218, Percentage over Total: 15.774753656891551
+Low frequency energy: 373358.1292267206, Percentage over Total: 9.176018649987986
+Trace 141
+{'board_loc': 2, 'path_idx': 4, 'activities': [1], 'gender': 'm', 'body_height': 170, 'legi': 'f23a6'}
+Walking: True, Energy: 1041851.7260283846, Percentage over Total: 26.03406735664312
+Running: False, Energy: 737317.7182446874, Percentage over Total: 18.424290770436986
+Low frequency energy: 429336.8183383028, Percentage over Total: 10.72838232933129
+Trace 142
+{'board_loc': 1, 'path_idx': 3, 'activities': [1, 0], 'gender': 'f', 'body_height': 181, 'legi': 'c9555'}
+Walking: True, Energy: 883358.6613029803, Percentage over Total: 34.71527576469422
+Running: False, Energy: 221598.69122586946, Percentage over Total: 8.708648040711104
+Low frequency energy: 37756.57683022696, Percentage over Total: 1.4838027111873533
+Trace 143
+{'board_loc': 0, 'path_idx': 1, 'activities': [1], 'gender': 'm', 'body_height': 185, 'legi': 'def42'}
+Walking: True, Energy: 557247.3916868436, Percentage over Total: 41.13379743999983
+Running: False, Energy: 107358.24368684842, Percentage over Total: 7.9247607350141775
+Low frequency energy: 88058.93592983537, Percentage over Total: 6.50016220328105
+Trace 144
+{'board_loc': 0, 'path_idx': 0, 'activities': [1], 'gender': 'm', 'body_height': 190, 'legi': '47f1c'}
+Walking: True, Energy: 421350.41763449454, Percentage over Total: 36.12576463653423
+Running: False, Energy: 117241.51265503948, Percentage over Total: 10.05205908086055
+Low frequency energy: 96858.7503116142, Percentage over Total: 8.304480713204239
+Trace 145
+{'board_loc': 1, 'path_idx': 4, 'activities': [0, 1], 'gender': 'f', 'body_height': 168, 'legi': 'ea614'}
+Walking: True, Energy: 628434.378291294, Percentage over Total: 29.670527264832323
+Running: False, Energy: 218186.72476140963, Percentage over Total: 10.301338356854105
+Low frequency energy: 35189.33641916512, Percentage over Total: 1.6614084170491346
+Trace 146
+{'board_loc': 0, 'path_idx': 4, 'activities': [0, 1, 2], 'gender': 'f', 'body_height': 170, 'legi': '24b9d'}
+Walking: True, Energy: 236517.10782890383, Percentage over Total: 11.61406185796793
+Running: True, Energy: 583953.4373631165, Percentage over Total: 28.674760172589195
+Low frequency energy: 83433.58861337279, Percentage over Total: 4.096967310664629
+Trace 147
+{'board_loc': 0, 'path_idx': 2, 'activities': [0, 1], 'gender': 'm', 'body_height': 171, 'legi': '5ba99'}
+Walking: True, Energy: 749575.533773419, Percentage over Total: 28.325739384948083
+Running: False, Energy: 312242.31791042286, Percentage over Total: 11.79933725632546
+Low frequency energy: 222232.6873495032, Percentage over Total: 8.397959779969945
+Trace 148
+{'board_loc': 1, 'path_idx': 2, 'activities': [1], 'gender': 'm', 'body_height': 185, 'legi': 'def42'}
+Walking: True, Energy: 716439.4431512579, Percentage over Total: 20.713095557156084
+Running: False, Energy: 296426.71972529724, Percentage over Total: 8.570040399168978
+Low frequency energy: 205056.25858250633, Percentage over Total: 5.928414354087484
+Trace 149
+{'board_loc': 2, 'path_idx': 0, 'activities': [1], 'gender': 'm', 'body_height': 173, 'legi': '4bba4'}
+Walking: True, Energy: 1374499.0334423173, Percentage over Total: 30.39524941229787
+Running: False, Energy: 722321.2630265164, Percentage over Total: 15.973190530743546
+Low frequency energy: 311752.54499246465, Percentage over Total: 6.894000017034018
+Trace 150
+{'board_loc': 2, 'path_idx': 4, 'activities': [1], 'gender': 'm', 'body_height': 190, 'legi': '47f1c'}
+Walking: True, Energy: 1219791.5740537466, Percentage over Total: 26.581178318941337
+Running: False, Energy: 616093.9802133013, Percentage over Total: 13.425657544798298
+Low frequency energy: 592271.9648520336, Percentage over Total: 12.906538334841768
+Trace 151
+{'board_loc': 2, 'path_idx': 2, 'activities': [1, 3], 'gender': 'f', 'body_height': 164, 'legi': 'dfac3'}
+Walking: True, Energy: 462574.79559098464, Percentage over Total: 19.224848213859534
+Running: False, Energy: 383824.2232452904, Percentage over Total: 15.951933618142544
+Low frequency energy: 383492.9332857208, Percentage over Total: 15.938165035746342
+Cycling!!
+Trace 152
+{'board_loc': 2, 'path_idx': 0, 'activities': [0, 1, 2], 'gender': 'm', 'body_height': 177, 'legi': '949d8'}
+Walking: True, Energy: 314506.3489693642, Percentage over Total: 15.262956215582697
+Running: True, Energy: 426455.92404970754, Percentage over Total: 20.69585595959012
+Low frequency energy: 119373.55183366021, Percentage over Total: 5.793184464817358
+Trace 153
+{'board_loc': 0, 'path_idx': 4, 'activities': [1, 2], 'gender': 'f', 'body_height': 168, 'legi': 'ea614'}
+Walking: True, Energy: 240079.81457016311, Percentage over Total: 13.0992882408751
+Running: True, Energy: 326426.7167125948, Percentage over Total: 17.8105671207569
+Low frequency energy: 126503.84904870497, Percentage over Total: 6.902331148647447
+Trace 154
+{'board_loc': 2, 'path_idx': 1, 'activities': [1, 2], 'gender': 'f', 'body_height': 181, 'legi': 'ba008'}
+Walking: True, Energy: 561692.732519839, Percentage over Total: 20.251251434488097
+Running: True, Energy: 388159.29447269836, Percentage over Total: 13.994682526397972
+Low frequency energy: 172058.40337008753, Percentage over Total: 6.20338805601539
+Trace 155
+{'board_loc': 2, 'path_idx': 1, 'activities': [1], 'gender': 'm', 'body_height': 185, 'legi': '7eda8'}
+Walking: True, Energy: 957568.6925674499, Percentage over Total: 24.2796335276747
+Running: False, Energy: 708494.0036123361, Percentage over Total: 17.964220110559715
+Low frequency energy: 442892.7722422236, Percentage over Total: 11.229767937864827
+Trace 156
+{'board_loc': 2, 'path_idx': 0, 'activities': [1], 'gender': 'f', 'body_height': 181, 'legi': 'ba008'}
+Walking: True, Energy: 985171.6938031976, Percentage over Total: 31.146918346948652
+Running: False, Energy: 606661.1797455715, Percentage over Total: 19.18003364149999
+Low frequency energy: 318108.3938552882, Percentage over Total: 10.057227822533166
+Trace 157
+{'board_loc': 0, 'path_idx': 2, 'activities': [2], 'gender': 'm', 'body_height': 178, 'legi': '24257'}
+Walking: False, Energy: 117723.87315972114, Percentage over Total: 8.571082444013502
+Running: True, Energy: 245592.31450819733, Percentage over Total: 17.88075705264911
+Low frequency energy: 58863.80954247169, Percentage over Total: 4.285677586165725
+Trace 158
+{'board_loc': 2, 'path_idx': 3, 'activities': [1], 'gender': 'm', 'body_height': 170, 'legi': '23193'}
+Walking: True, Energy: 1078102.1879733866, Percentage over Total: 28.650597730495974
+Running: False, Energy: 713879.3415447501, Percentage over Total: 18.971364747118823
+Low frequency energy: 238103.92054225228, Percentage over Total: 6.327618774555762
+Trace 159
+{'board_loc': 1, 'path_idx': 2, 'activities': [1, 3], 'gender': 'm', 'body_height': 177, 'legi': '949d8'}
+Walking: True, Energy: 338316.922228589, Percentage over Total: 23.097301217984946
+Running: False, Energy: 98234.18051961462, Percentage over Total: 6.706565082282229
+Low frequency energy: 36915.67186421082, Percentage over Total: 2.5202771031827416
+Cycling!!
+Trace 160
+{'board_loc': 1, 'path_idx': 1, 'activities': [0, 1], 'gender': 'm', 'body_height': 171, 'legi': '5ba99'}
+Walking: True, Energy: 705385.6005362435, Percentage over Total: 19.934009543448067
+Running: False, Energy: 306568.0203975671, Percentage over Total: 8.663530754916634
+Low frequency energy: 86031.85270313158, Percentage over Total: 2.4312372857072897
+Trace 161
+{'board_loc': 1, 'path_idx': 0, 'activities': [1], 'gender': 'f', 'body_height': 171, 'legi': '44f05'}
+Walking: True, Energy: 489823.88861475047, Percentage over Total: 29.00856735380914
+Running: False, Energy: 240262.21009287858, Percentage over Total: 14.228915057133918
+Low frequency energy: 52125.08234592254, Percentage over Total: 3.086974721324377
+Trace 162
+{'board_loc': 2, 'path_idx': 2, 'activities': [1], 'gender': 'f', 'body_height': 168, 'legi': 'd23c4'}
+Walking: True, Energy: 1021483.954111956, Percentage over Total: 25.912180037727637
+Running: False, Energy: 901314.0114024152, Percentage over Total: 22.86380597558182
+Low frequency energy: 444269.7314249265, Percentage over Total: 11.269875772061193
+Trace 163
+{'board_loc': 1, 'path_idx': 2, 'activities': [0, 1], 'gender': 'm', 'body_height': 185, 'legi': '02597'}
+Walking: True, Energy: 916436.1571990533, Percentage over Total: 38.583224492785824
+Running: False, Energy: 147903.84023517772, Percentage over Total: 6.226955392703362
+Low frequency energy: 39296.09495373926, Percentage over Total: 1.6544197229449038
+Trace 164
+{'board_loc': 2, 'path_idx': 2, 'activities': [1], 'gender': 'm', 'body_height': 170, 'legi': '23193'}
+Walking: True, Energy: 931922.5704763641, Percentage over Total: 29.301974096852828
+Running: False, Energy: 667794.5331423016, Percentage over Total: 20.997128658610954
+Low frequency energy: 149815.25597044404, Percentage over Total: 4.710565972788257
+Trace 165
+{'board_loc': 0, 'path_idx': 4, 'activities': [1, 0, 2], 'gender': 'f', 'body_height': 181, 'legi': 'c9555'}
+Walking: True, Energy: 921416.906568524, Percentage over Total: 32.23526736808585
+Running: True, Energy: 282123.47660218785, Percentage over Total: 9.869935785044238
+Low frequency energy: 125669.51023615414, Percentage over Total: 4.396479198070332
+Trace 166
+{'board_loc': 2, 'path_idx': 1, 'activities': [1], 'gender': 'm', 'body_height': 173, 'legi': '4bba4'}
+Walking: True, Energy: 978678.3122641667, Percentage over Total: 27.33501693668384
+Running: False, Energy: 594265.1109544866, Percentage over Total: 16.59814738843065
+Low frequency energy: 319885.0865066877, Percentage over Total: 8.934564246369721
+Trace 167
+{'board_loc': 2, 'path_idx': 3, 'activities': [1, 3], 'gender': 'm', 'body_height': 177, 'legi': '949d8'}
+Walking: True, Energy: 330256.41286546394, Percentage over Total: 24.18291940539596
+Running: False, Energy: 232003.91811967522, Percentage over Total: 16.988412139962723
+Low frequency energy: 153167.5909983389, Percentage over Total: 11.215647491878956
+Cycling!!
+Trace 168
+{'board_loc': 1, 'path_idx': 3, 'activities': [0, 1, 2], 'gender': 'f', 'body_height': 165, 'legi': 'ab166'}
+Walking: True, Energy: 698030.5860148619, Percentage over Total: 22.030902804508965
+Running: True, Energy: 557772.4491937226, Percentage over Total: 17.604143516654137
+Low frequency energy: 70560.72371723845, Percentage over Total: 2.2270033393596784
+Trace 169
+{'board_loc': 1, 'path_idx': 3, 'activities': [1], 'gender': 'm', 'body_height': 183, 'legi': '01850'}
+Walking: True, Energy: 696846.44952899, Percentage over Total: 26.72432136671523
+Running: False, Energy: 130545.02066966609, Percentage over Total: 5.006450255373658
+Low frequency energy: 30827.585407744693, Percentage over Total: 1.1822494036574076
+Trace 170
+{'board_loc': 1, 'path_idx': 3, 'activities': [1, 3], 'gender': 'm', 'body_height': 177, 'legi': '949d8'}
+Walking: True, Energy: 149995.73477953832, Percentage over Total: 16.90481940467998
+Running: False, Energy: 72167.25206962197, Percentage over Total: 8.133393692574517
+Low frequency energy: 28547.63998748036, Percentage over Total: 3.2173761415781876
+Cycling!!
+Trace 171
+{'board_loc': 0, 'path_idx': 2, 'activities': [1], 'gender': 'm', 'body_height': 180, 'legi': '3829e'}
+Walking: True, Energy: 617031.8838198303, Percentage over Total: 46.90481794384535
+Running: False, Energy: 110208.90117635803, Percentage over Total: 8.37773311399534
+Low frequency energy: 82878.85571330869, Percentage over Total: 6.300189245588603
+Trace 172
+{'board_loc': 0, 'path_idx': 0, 'activities': [2], 'gender': 'm', 'body_height': 182, 'legi': '460e6'}
+Walking: False, Energy: 149718.0696529192, Percentage over Total: 10.581150276835883
+Running: True, Energy: 400180.3241265989, Percentage over Total: 28.282278533464073
+Low frequency energy: 53456.33391958577, Percentage over Total: 3.7779641680066756
+Trace 173
+{'board_loc': 2, 'path_idx': 1, 'activities': [0, 1, 2, 3], 'gender': 'm', 'body_height': 183, 'legi': '01850'}
+Walking: True, Energy: 368818.82544568967, Percentage over Total: 18.804335770419186
+Running: True, Energy: 389614.40567179775, Percentage over Total: 19.86460451521516
+Low frequency energy: 178105.96543538725, Percentage over Total: 9.080784780208775
+Cycling!!
+Trace 174
+{'board_loc': 1, 'path_idx': 2, 'activities': [0, 1], 'gender': 'm', 'body_height': 194, 'legi': '174ca'}
+Walking: True, Energy: 711061.4269623548, Percentage over Total: 22.227810085475504
+Running: False, Energy: 242081.00953943428, Percentage over Total: 7.567462530389245
+Low frequency energy: 94874.74042493346, Percentage over Total: 2.9657883722974816
+Trace 175
+{'board_loc': 2, 'path_idx': 3, 'activities': [1], 'gender': 'f', 'body_height': 164, 'legi': 'dfac3'}
+Walking: True, Energy: 949212.9338302597, Percentage over Total: 23.49314147536647
+Running: False, Energy: 684376.0780712418, Percentage over Total: 16.938395434210612
+Low frequency energy: 417983.06453078805, Percentage over Total: 10.345134288999294
+Trace 176
+{'board_loc': 1, 'path_idx': 3, 'activities': [1], 'gender': 'm', 'body_height': 180, 'legi': 'c7ed8'}
+Walking: True, Energy: 594830.5132354149, Percentage over Total: 31.922597758490106
+Running: False, Energy: 213248.13409118078, Percentage over Total: 11.444326166649022
+Low frequency energy: 35359.29773426995, Percentage over Total: 1.89761724302644
+Trace 177
+{'board_loc': 2, 'path_idx': 3, 'activities': [1], 'gender': 'm', 'body_height': 182, 'legi': '37289'}
+Walking: True, Energy: 980387.5215682092, Percentage over Total: 25.131278474786956
+Running: False, Energy: 623642.1254653813, Percentage over Total: 15.986457986132272
+Low frequency energy: 362818.0928162301, Percentage over Total: 9.300488149492832
+Trace 178
+{'board_loc': 0, 'path_idx': 2, 'activities': [0, 1], 'gender': 'm', 'body_height': 193, 'legi': '45121'}
+Walking: True, Energy: 727571.8968900063, Percentage over Total: 38.13775114126123
+Running: False, Energy: 158404.4349252187, Percentage over Total: 8.30321916593131
+Low frequency energy: 93081.0965112015, Percentage over Total: 4.879110517976196

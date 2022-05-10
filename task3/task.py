@@ -6,6 +6,15 @@ import numpy as np
 import scipy
 import scipy.signal as signal
 
+
+def slim_trace(trace):
+    data = {}
+    data["ax"] = trace.data["ax"]
+    data["ay"] = trace.data["ay"]
+    data["az"] = trace.data["az"]
+    trace.data = data
+    return trace
+
 def magnitude(trace, dataset="accelerometer"):
     prefix = "g" if dataset == "gyroscope" else "a"
     magnitude_x = np.array(trace.data[prefix + "x"].values)
@@ -71,242 +80,272 @@ def combine_ranges(range1, range2):
     new_range = {"windows": range1["windows"]+range2["windows"], "energy_mean": new_mean}
     return new_range
 
-filename = "data/trace_{:03d}.json".format(int(sys.argv[1]))
-trace = Recording(filename, no_labels=True, mute=True)
+#filename = "data/trace_{:03d}.json".format(int(sys.argv[1]))
+#trace = Recording(filename, no_labels=True, mute=True)
 
-activities = []
+def task(trace):
+    activities = []
 
-f, acc_fft = fft(trace, dataset="accelerometer")
-_, gyr_fft = fft(trace, dataset="gyroscope")
-mag = net_magnitude(trace)
+    f, acc_fft = fft(trace, dataset="accelerometer")
+    #_, gyr_fft = fft(trace, dataset="gyroscope")
+    mag = net_magnitude(trace)
 
-low_freq_indexes = []
-low_freq2_indexes = []
-walk_freq_indexes = []
-run_freq_indexes = []
-for i, freq in enumerate(f):
-    if len(low_freq_indexes) == 0 and freq > 0.7:
-        low_freq_indexes.append(i)
-    if len(low_freq_indexes) == 1 and freq > 1.15:
-        low_freq_indexes.append(i)
-    if len(low_freq2_indexes) == 0 and freq > 1.1:
-        low_freq2_indexes.append(i)
-    if len(low_freq2_indexes) == 1 and freq > 1.55:
-        low_freq2_indexes.append(i)
-    if len(walk_freq_indexes) == 0 and freq > 1.4:
-        walk_freq_indexes.append(i)
-    if len(walk_freq_indexes) == 1 and freq > 2.25:
-        walk_freq_indexes.append(i)
-    if len(run_freq_indexes) == 0 and freq > 2.55:
-        run_freq_indexes.append(i)
-    if len(run_freq_indexes) == 1 and freq > 3.45:
-        run_freq_indexes.append(i)
-        break
-
-
-b, a = signal.butter(4, [0.7], fs=200, btype="highpass")
-y = signal.lfilter(b, a, mag)
-
-
-# the following are computed over the fft of the accelerometer's energy
-total_energy = compute_energy(f, acc_fft, 0.7, 10)
-walk_energy = compute_energy(f, acc_fft, 1.4, 2.25)
-run_energy = compute_energy(f, acc_fft, 2.55, 3.45)
-low_freq_energy = compute_energy(f, acc_fft, 0.7, 1.15)
-low_freq_energy2 = compute_energy(f, acc_fft, 1.1, 1.55)
-
-if walk_energy/total_energy > 0.11:
-    activities.append(1)
-
-sub_ranges = []
-current_sub_range = {"windows":[],"energy_mean":0} #the energy mean is slightly weighted towards more recent windows
-even_window = {"start":-1, "start_index":0, "energy":0}
-odd_window = {"start":-0.5, "start_index":0, "energy":0}
-
-for i, time in enumerate(np.array(trace.data["ax"].timestamps)):
-    new_even = (time >= even_window["start"]+5)
-    new_odd = (time >= odd_window["start"]+5)
-    if new_even or new_odd:
-        if new_even:
-            if even_window["start"] > -0.5:
-                if fits_in_range(current_sub_range, even_window):
-                    add_to_range(current_sub_range, even_window)
-                else:
-                    sub_ranges.append(current_sub_range)
-                    current_sub_range = {"windows":[],"energy_mean":0}
-                    add_to_range(current_sub_range, even_window)
-            even_window = {"start":time, "start_index":i, "energy":0}
-        if new_odd:
-            if odd_window["start"] > -0.5:
-                if fits_in_range(current_sub_range, odd_window):
-                    add_to_range(current_sub_range, odd_window)
-                else:
-                    sub_ranges.append(current_sub_range)
-                    current_sub_range = {"windows":[],"energy_mean":0}
-                    add_to_range(current_sub_range, odd_window)
-            odd_window = {"start":time, "start_index":i, "energy":0}
-    local_energy = y[i]**2
-    even_window["energy"] += local_energy
-    odd_window["energy"] += local_energy
-
-sub_ranges.append(current_sub_range)
-#update_ranges(sub_ranges, current_sub_range, even_window)
-#update_ranges(sub_ranges, current_sub_range, odd_window)
-
-print(len(sub_ranges))
-for range in sub_ranges:
-    print(str(range["energy_mean"]) + " " + str(len(range["windows"])))
-
-# compress ranges since some walking section may have short spikes - we combine those with the rest of the walk
-compressed_ranges = []
-#skip = False
-#
-#for i, range in enumerate(sub_ranges):
-#    if skip:
-#        skip = False
-#        continue
-#    if i > 0 and i < len(sub_ranges)-1:
-#        prev_range = sub_ranges[i-1]
-#        next_range = sub_ranges[i+1]
-#        if len(range["windows"]) < 7 and range["energy_mean"] < 100 and prev_range["energy_mean"] < 70 and next_range["energy_mean"] < 70:
-#            new_mean = (prev_range["energy_mean"]*len(prev_range["windows"])+range["energy_mean"]*len(range["windows"])+next_range["energy_mean"]*len(next_range["windows"]))/(len(range["windows"])+len(prev_range["windows"])+len(next_range["windows"]))
-#            new_range = {"windows": prev_range["windows"]+range["windows"]+next_range["windows"], "energy_mean": new_mean}
-#            compressed_ranges[-1] = new_range
-#            skip = True
-#        else:
-#            compressed_ranges.append(range)
-#    else:
-#        compressed_ranges.append(range)
-#
-#sub_ranges = compressed_ranges
-#compressed_ranges = []
-
-# compress again, this time looking at consecutive ranges with similar energies
-for i, range in enumerate(sub_ranges):
-    if i == 0:
-        compressed_ranges.append(range)
-    else:
-        plus_fac = 1.2 if range["energy_mean"] > 100 else 1.5
-        minus_fac = 0.8 if range["energy_mean"] > 100 else 0.66
-        if (range["energy_mean"] < plus_fac*compressed_ranges[-1]["energy_mean"] and range["energy_mean"] > minus_fac*compressed_ranges[-1]["energy_mean"]) or (range["energy_mean"] < 5 and compressed_ranges[-1]["energy_mean"] < 10):
-            new_mean = (compressed_ranges[-1]["energy_mean"]*len(compressed_ranges[-1]["windows"])+range["energy_mean"]*len(range["windows"]))/(len(compressed_ranges[-1]["windows"])+len(range["windows"]))
-            new_range = {"windows": compressed_ranges[-1]["windows"]+range["windows"], "energy_mean": new_mean}
-            compressed_ranges[-1] = new_range
-        else:
-            compressed_ranges.append(range)
-print("")
-for range in compressed_ranges:
-    print(str(range["energy_mean"]) + " " + str(len(range["windows"])))
-
-walk_energy_ratio = 100*walk_energy/total_energy
-run_energy_ratio = 100*run_energy/total_energy
-low_freq_energy_ratio = 100*low_freq_energy/total_energy
-low_freq_energy2_ratio = 100*low_freq_energy2/total_energy
-
-print("Walk Energy Ratio: " + str(walk_energy_ratio))
-print("Run Energy Ratio: " + str(run_energy_ratio))
-print("LF Energy Ratio: " + str(low_freq_energy_ratio))
-print("LF2 Energy Ratio: " + str(low_freq_energy2_ratio))
-
-
-range_height = 0
-low_ranges = []
-medium_low_ranges = []
-medium_ranges = []
-medium_high_ranges = []
-high_ranges = []
-ankle_points = 0
-wrist_points = 0
-may_have_stood = False
-
-max_walk_freq_peak = np.max(acc_fft[walk_freq_indexes[0]:walk_freq_indexes[1]])
-max_run_freq_peak = np.max(acc_fft[run_freq_indexes[0]:run_freq_indexes[1]])
-max_low_freq_peak = np.max(acc_fft[low_freq_indexes[0]:low_freq_indexes[1]])
-max_low_freq2_peak = np.max(acc_fft[low_freq2_indexes[0]:low_freq2_indexes[1]])
-
-for range in compressed_ranges:
-    if range["energy_mean"] < 5 and len(range["windows"]) > 3:
-        may_have_stood = True
-        break
-for range in compressed_ranges:
-    if (may_have_stood and range["energy_mean"] < 40) or (not may_have_stood and range["energy_mean"] < 10):
-        if range_height == 1:
-            low_ranges[-1] = combine_ranges(low_ranges[-1], range)
-        else:
-            low_ranges.append(range)
-        range_height = 1
-    elif range["energy_mean"] < 90:
-        if range_height == 2:
-            medium_low_ranges[-1] = combine_ranges(medium_low_ranges[-1], range)
-        else:
-            medium_low_ranges.append(range)
-        range_height = 2
-    elif range["energy_mean"] < 200:
-        if range_height == 3:
-            medium_ranges[-1] = combine_ranges(medium_ranges[-1], range)
-        else:
-            medium_ranges.append(range)
-        range_height = 3
-    elif range["energy_mean"] < 570:
-        if range_height == 4:
-            medium_high_ranges[-1] = combine_ranges(medium_high_ranges[-1], range)
-        else:
-            medium_high_ranges.append(range)
-        range_height = 4
-    elif range["energy_mean"] < 900:
-        if range_height == 5:
-            high_ranges[-1] = combine_ranges(high_ranges[-1], range)
-        else:
-            high_ranges.append(range)
-        range_height = 5
-        
-band_position = -1
-
-for range in high_ranges:
-    if len(range["windows"]) > 13:
-        ankle_points += 1
-        activities.append(2)
-
-for range in medium_high_ranges:
-    if len(range["windows"]) > 13:
-        if run_energy_ratio < 15 and 1 in activities:
-            ankle_points += 1
-        elif 2 not in activities and ((1 in activities and run_energy_ratio > walk_energy_ratio) or (run_energy_ratio > 16 and range["energy_mean"] > 450 and max_run_freq_peak > max_walk_freq_peak/2) or 1 not in activities):
-            activities.append(2)
-
-
-for range in medium_ranges:
-    if len(range["windows"]) > 13:
-        if 1 in activities:
-            if low_freq_energy_ratio < 3.5 and (low_freq_energy2_ratio < 3.5 or 2 not in activities):
-                band_position = 1
-            else:
-                wrist_points += 1
-        else:
-            activities.append(3)
+    low_freq_indexes = []
+    low_freq2_indexes = []
+    walk_freq_indexes = []
+    run_freq_indexes = []
+    for i, freq in enumerate(f):
+        if len(low_freq_indexes) == 0 and freq > 0.7:
+            low_freq_indexes.append(i)
+        if len(low_freq_indexes) == 1 and freq > 1.15:
+            low_freq_indexes.append(i)
+        if len(low_freq2_indexes) == 0 and freq > 1.1:
+            low_freq2_indexes.append(i)
+        if len(low_freq2_indexes) == 1 and freq > 1.55:
+            low_freq2_indexes.append(i)
+        if len(walk_freq_indexes) == 0 and freq > 1.4:
+            walk_freq_indexes.append(i)
+        if len(walk_freq_indexes) == 1 and freq > 2.25:
+            walk_freq_indexes.append(i)
+        if len(run_freq_indexes) == 0 and freq > 2.55:
+            run_freq_indexes.append(i)
+        if len(run_freq_indexes) == 1 and freq > 3.45:
+            run_freq_indexes.append(i)
             break
 
-for range in medium_low_ranges:
-    if len(range["windows"]) > 13:
-        activities.append(3)
-        break
 
-for range in low_ranges:
-    if len(range["windows"]) > 13:
-        activities.append(0)
-        break
+    b, a = signal.butter(4, [0.7], fs=200, btype="highpass")
+    y = signal.lfilter(b, a, mag)
+
+    # the following are computed over the fft of the accelerometer's energy
+    total_energy = compute_energy(f, acc_fft, 0.7, 10)
+    walk_energy = compute_energy(f, acc_fft, 1.4, 2.25)
+    run_energy = compute_energy(f, acc_fft, 2.55, 3.45)
+    low_freq_energy = compute_energy(f, acc_fft, 0.7, 1.15)
+    low_freq_energy2 = compute_energy(f, acc_fft, 1.1, 1.55)
+
+    if walk_energy/total_energy > 0.11:
+        activities.append(1)
+
+    sub_ranges = []
+    current_sub_range = {"windows":[],"energy_mean":0} #the energy mean is slightly weighted towards more recent windows
+    even_window = {"start":-1, "start_index":0, "energy":0}
+    odd_window = {"start":-0.5, "start_index":0, "energy":0}
+
+    for i, time in enumerate(np.array(trace.data["ax"].timestamps)):
+        new_even = (time >= even_window["start"]+5)
+        new_odd = (time >= odd_window["start"]+5)
+        if new_even or new_odd:
+            if new_even:
+                if even_window["start"] > -0.5:
+                    if fits_in_range(current_sub_range, even_window):
+                        add_to_range(current_sub_range, even_window)
+                    else:
+                        sub_ranges.append(current_sub_range)
+                        current_sub_range = {"windows":[],"energy_mean":0}
+                        add_to_range(current_sub_range, even_window)
+                even_window = {"start":time, "start_index":i, "energy":0}
+            if new_odd:
+                if odd_window["start"] > -0.5:
+                    if fits_in_range(current_sub_range, odd_window):
+                        add_to_range(current_sub_range, odd_window)
+                    else:
+                        sub_ranges.append(current_sub_range)
+                        current_sub_range = {"windows":[],"energy_mean":0}
+                        add_to_range(current_sub_range, odd_window)
+                odd_window = {"start":time, "start_index":i, "energy":0}
+        local_energy = y[i]**2
+        even_window["energy"] += local_energy
+        odd_window["energy"] += local_energy
+
+    sub_ranges.append(current_sub_range)
 
 
-if band_position == -1:
-    if (low_freq_energy_ratio < 3.5 and (low_freq_energy2_ratio < 3.5 or 2 not in activities)) or max_low_freq_peak < max_walk_freq_peak/8:
-        band_position = 1
-    elif ankle_points >= wrist_points:
-        band_position = 2
-    else:
-        band_position = 0
+    # compress some ranges
+    compressed_ranges = []
+    for i, range in enumerate(sub_ranges):
+        if i == 0:
+            compressed_ranges.append(range)
+        else:
+            plus_fac = 1.2 if range["energy_mean"] > 100 else 1.5
+            minus_fac = 0.8 if range["energy_mean"] > 100 else 0.66
+            if (range["energy_mean"] < plus_fac*compressed_ranges[-1]["energy_mean"] and range["energy_mean"] > minus_fac*compressed_ranges[-1]["energy_mean"]) or (range["energy_mean"] < 5 and compressed_ranges[-1]["energy_mean"] < 10):
+                new_mean = (compressed_ranges[-1]["energy_mean"]*len(compressed_ranges[-1]["windows"])+range["energy_mean"]*len(range["windows"]))/(len(compressed_ranges[-1]["windows"])+len(range["windows"]))
+                new_range = {"windows": compressed_ranges[-1]["windows"]+range["windows"], "energy_mean": new_mean}
+                compressed_ranges[-1] = new_range
+            else:
+                compressed_ranges.append(range)
+    #print("")
+    #for range in compressed_ranges:
+    #    print(str(range["energy_mean"]) + " " + str(len(range["windows"])))
 
-print(max_walk_freq_peak)
-print(max_low_freq_peak)
+    walk_energy_ratio = 100*walk_energy/total_energy
+    run_energy_ratio = 100*run_energy/total_energy
+    low_freq_energy_ratio = 100*low_freq_energy/total_energy
+    low_freq_energy2_ratio = 100*low_freq_energy2/total_energy
 
-print("Activities: " + str(activities))
-print("Band position: " + str(band_position))
+    #print("Walk Energy Ratio: " + str(walk_energy_ratio))
+    #print("Run Energy Ratio: " + str(run_energy_ratio))
+    #print("LF Energy Ratio: " + str(low_freq_energy_ratio))
+    #print("LF2 Energy Ratio: " + str(low_freq_energy2_ratio))
+
+
+    max_walk_freq_peak = np.max(acc_fft[walk_freq_indexes[0]:walk_freq_indexes[1]])
+    max_run_freq_peak = np.max(acc_fft[run_freq_indexes[0]:run_freq_indexes[1]])
+    max_low_freq_peak = np.max(acc_fft[low_freq_indexes[0]:low_freq_indexes[1]])
+    max_low_freq2_peak = np.max(acc_fft[low_freq2_indexes[0]:low_freq2_indexes[1]])
+
+
+    range_height = 0
+    low_ranges = []
+    medium_low_ranges = []
+    medium_ranges = []
+    medium_high_ranges = []
+    high_ranges = []
+    ankle_points = 0
+    wrist_points = 0
+    may_have_stood = False
+
+
+    for range in compressed_ranges:
+        if range["energy_mean"] < 5 and len(range["windows"]) > 3:
+            may_have_stood = True
+            break
+    for range in compressed_ranges:
+        if (may_have_stood and range["energy_mean"] < 50) or (not may_have_stood and range["energy_mean"] < 10):
+            if range_height == 1:
+                low_ranges[-1] = combine_ranges(low_ranges[-1], range)
+            else:
+                low_ranges.append(range)
+            range_height = 1
+        elif range["energy_mean"] < 90:
+            if range_height == 2:
+                medium_low_ranges[-1] = combine_ranges(medium_low_ranges[-1], range)
+            else:
+                medium_low_ranges.append(range)
+            range_height = 2
+        elif range["energy_mean"] < 200:
+            if range_height == 3:
+                medium_ranges[-1] = combine_ranges(medium_ranges[-1], range)
+            else:
+                medium_ranges.append(range)
+            range_height = 3
+        elif range["energy_mean"] < 570:
+            if range_height == 4:
+                medium_high_ranges[-1] = combine_ranges(medium_high_ranges[-1], range)
+            else:
+                medium_high_ranges.append(range)
+            range_height = 4
+        elif range["energy_mean"] < 900:
+            if range_height == 5:
+                high_ranges[-1] = combine_ranges(high_ranges[-1], range)
+            else:
+                high_ranges.append(range)
+            range_height = 5
+            
+    band_position = -1
+
+    for range in high_ranges:
+        if len(range["windows"]) > 13:
+            ankle_points += 1
+            activities.append(2)
+
+    for range in medium_high_ranges:
+        if len(range["windows"]) > 13:
+            if run_energy_ratio < 15 and 1 in activities:
+                ankle_points += 1
+            elif 2 not in activities and ((1 in activities and run_energy_ratio > walk_energy_ratio) or (run_energy_ratio > 16 and range["energy_mean"] > 450 and max_run_freq_peak > max_walk_freq_peak/2) or 1 not in activities):
+                activities.append(2)
+
+
+    for range in medium_ranges:
+        if len(range["windows"]) > 13:
+            if 1 in activities:
+                if low_freq_energy_ratio < 3.5 and (low_freq_energy2_ratio < 3.5 or 2 not in activities) and max_low_freq_peak < max_walk_freq_peak/5:
+                    band_position = 1
+                else:
+                    wrist_points += 1
+            else:
+                #activities.append(3)
+                break
+
+    
+
+    for range in low_ranges:
+        if len(range["windows"]) > 13:
+            activities.append(0)
+            break
+
+
+    if band_position == -1:
+        if ((low_freq_energy_ratio < 3.5 and (low_freq_energy2_ratio < 3.5 or 2 not in activities)) and (max_low_freq_peak < max_walk_freq_peak/5 and 1 in activities or max_low_freq2_peak < max_run_freq_peak/5 and 2 in activities )) or max_low_freq_peak < max_walk_freq_peak/10:
+            band_position = 1
+        elif ankle_points >= wrist_points:
+            band_position = 2
+        else:
+            band_position = 0
+
+    #for range in medium_low_ranges:
+    #    if len(range["windows"]) > 13:
+    #        if band_position == 1:
+    #            activities.append(3)
+    #        break
+    
+    for range_type in [low_ranges, medium_low_ranges, medium_ranges, medium_high_ranges]:
+        for sub_range in range_type:
+            #print("mean " + str(sub_range["energy_mean"]))
+            #print(len(sub_range["windows"]))
+            start = sub_range["windows"][0]["start_index"]
+            end = sub_range["windows"][0-1]["start_index"]
+            #print("Time:")
+            #print(trace.data["ax"].timestamps[start])
+            #print(trace.data["ax"].timestamps[end])
+            if len(sub_range["windows"]) > 10 and sub_range["energy_mean"] > 15:
+                #print(sub_range["energy_mean"])
+                #start = sub_range["windows"][0]["start_index"]
+                #end = sub_range["windows"][0-1]["start_index"]
+                #print("Time:")
+                #print(trace.data["ax"].timestamps[start])
+                #print(trace.data["ax"].timestamps[end])
+                mean = np.mean(mag[start:end])
+                peak = mean
+                last_peak_timestamp = -1
+                peaks = []
+                i = start
+                for value in mag[start:end]:
+                    timestamp = trace.data["ax"].timestamps[i]
+                    if value > peak:
+                        if timestamp - last_peak_timestamp > 0.15:
+                            peak = value
+                            last_peak_timestamp = timestamp
+                        elif len(peaks) > 0 and value > peaks[-1]:
+                            peaks[-1] = value
+                            last_peak_timestamp = timestamp
+                    elif value < mean and peak > mean:
+                        if peak > mean+0.1:
+                            peaks.append(peak)
+                        peak = mean
+                    i+=1
+        #        print(peaks)
+                #print(np.std(np.array(peaks)))
+                #print((max(peaks) - min(peaks))/np.mean(np.array(peaks)))
+                if np.std(np.array(peaks)) > 0.35 and (max(peaks) - min(peaks))/np.mean(np.array(peaks)) > 1.68:
+                    activities.append(3)
+                    print((max(peaks) - min(peaks))/np.mean(np.array(peaks)))
+                    if 3 not in trace.labels["activities"]:
+                        print(np.std(np.array(peaks)))
+                    break
+        if 3 in activities:
+            break
+    
+    
+    #print(max_walk_freq_peak)
+    #print(max_low_freq_peak)
+#
+    print("Activities: " + str(activities))
+    print("Band position: " + str(band_position))
+    #if 3 in activities and 3 not in trace.labels["activities"]:
+    #    print("Oh NOOOOOOOOOOOOOOOOOOOOOOOOOOOo!")
+    #elif 3 not in activities and 3 in trace.labels["activities"]:
+    #    print("Oh wooooooooooooooooot!")
+    

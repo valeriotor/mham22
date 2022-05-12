@@ -83,6 +83,36 @@ def combine_ranges(range1, range2):
 #filename = "data/trace_{:03d}.json".format(int(sys.argv[1]))
 #trace = Recording(filename, no_labels=True, mute=True)
 
+def all_traces():
+    activity_false_positives = [0, 0, 0, 0]
+    activity_false_negatives = [0, 0, 0, 0]
+    activity_count = [0, 0, 0, 0]
+    location_error = {(1, 2) : 0, (2, 1) : 0, (1, 0) : 0, (0, 1) : 0, (2, 0) : 0, (0, 2) : 0}
+    for i in range(0, 179):
+        filename = "data/trace_{:03d}.json".format(i)
+        trace = Recording(filename, no_labels=True, mute=True)
+        print("Trace " + str(i))
+        activities, band_position = task(trace)
+        for i in range(4):
+            if i in activities and i not in trace.labels["activities"]:
+                activity_false_positives[i] += 1
+            elif i not in activities and i in trace.labels["activities"]:
+                activity_false_negatives[i] += 1
+            if i in trace.labels["activities"]:
+                activity_count[i] += 1
+        if band_position != trace.labels["board_loc"]:
+            location_error[(band_position, trace.labels["board_loc"])] += 1
+    for i in range(4):
+        print("Activity count for " + str(i) + ": " + str(activity_count[i]))
+        print("False negatives: " + str(activity_false_negatives[i]))
+        print("False positives" + str(activity_false_positives[i]))
+        print("")
+    for i in range(3):
+        for j in range(3):
+            if i != j:
+                print("Chose location " + str(i) + " instead of " + str(j) + " " + str(location_error[(i, j)]) + " times.")
+        
+
 def task(trace):
     activities = []
 
@@ -254,6 +284,7 @@ def task(trace):
         if len(range["windows"]) > 13:
             if run_energy_ratio < 15 and 1 in activities:
                 ankle_points += 1
+                print("eh")
             elif 2 not in activities and ((1 in activities and run_energy_ratio > walk_energy_ratio) or (run_energy_ratio > 16 and range["energy_mean"] > 450 and max_run_freq_peak > max_walk_freq_peak/2) or 1 not in activities):
                 activities.append(2)
 
@@ -267,7 +298,18 @@ def task(trace):
                     wrist_points += 1
             else:
                 #activities.append(3)
-                break
+                wrist_points += 1
+
+    for range in medium_low_ranges:
+        if len(range["windows"]) > 13:
+            if 1 in activities:
+                if low_freq_energy_ratio < 3.5 and (low_freq_energy2_ratio < 3.5 or 2 not in activities) and max_low_freq_peak < max_walk_freq_peak/5:
+                    band_position = 1
+                else:
+                    wrist_points += 1
+            else:
+                #activities.append(3)
+                wrist_points += 1
 
     
 
@@ -280,7 +322,7 @@ def task(trace):
     if band_position == -1:
         if ((low_freq_energy_ratio < 3.5 and (low_freq_energy2_ratio < 3.5 or 2 not in activities)) and (max_low_freq_peak < max_walk_freq_peak/5 and 1 in activities or max_low_freq2_peak < max_run_freq_peak/5 and 2 in activities )) or max_low_freq_peak < max_walk_freq_peak/10:
             band_position = 1
-        elif ankle_points >= wrist_points:
+        elif ankle_points > wrist_points or (ankle_points == 0 and wrist_points == 0):
             band_position = 2
         else:
             band_position = 0
@@ -342,10 +384,13 @@ def task(trace):
     #print(max_walk_freq_peak)
     #print(max_low_freq_peak)
 #
+    print("Ankle: " + str(ankle_points) + ", Wrist: " + str(wrist_points))
     print("Activities: " + str(activities))
     print("Band position: " + str(band_position))
+    print(trace.labels)
     #if 3 in activities and 3 not in trace.labels["activities"]:
     #    print("Oh NOOOOOOOOOOOOOOOOOOOOOOOOOOOo!")
     #elif 3 not in activities and 3 in trace.labels["activities"]:
     #    print("Oh wooooooooooooooooot!")
+    return activities, band_position
     

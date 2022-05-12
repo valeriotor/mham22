@@ -137,7 +137,7 @@ def task(trace):
             walk_freq_indexes.append(i)
         if len(walk_freq_indexes) == 1 and freq > 2.25:
             walk_freq_indexes.append(i)
-        if len(run_freq_indexes) == 0 and freq > 2.55:
+        if len(run_freq_indexes) == 0 and freq > 2.45:
             run_freq_indexes.append(i)
         if len(run_freq_indexes) == 1 and freq > 3.45:
             run_freq_indexes.append(i)
@@ -150,7 +150,7 @@ def task(trace):
     # the following are computed over the fft of the accelerometer's energy
     total_energy = compute_energy(f, acc_fft, 0.7, 10)
     walk_energy = compute_energy(f, acc_fft, 1.4, 2.25)
-    run_energy = compute_energy(f, acc_fft, 2.55, 3.45)
+    run_energy = compute_energy(f, acc_fft, 2.45, 3.45)
     low_freq_energy = compute_energy(f, acc_fft, 0.7, 1.15)
     low_freq_energy2 = compute_energy(f, acc_fft, 1.1, 1.55)
 
@@ -285,7 +285,7 @@ def task(trace):
             if run_energy_ratio < 15 and 1 in activities:
                 ankle_points += 1
                 print("eh")
-            elif 2 not in activities and ((1 in activities and run_energy_ratio > walk_energy_ratio) or (run_energy_ratio > 16 and range["energy_mean"] > 450 and max_run_freq_peak > max_walk_freq_peak/2) or 1 not in activities):
+            elif 2 not in activities and ((1 in activities and run_energy_ratio > walk_energy_ratio) or (run_energy_ratio > 16 and range["energy_mean"] > 450 and max_run_freq_peak > max_walk_freq_peak/2) or 1 not in activities or max_run_freq_peak > 0.95*max_walk_freq_peak):
                 activities.append(2)
 
 
@@ -317,6 +317,18 @@ def task(trace):
         if len(range["windows"]) > 13:
             activities.append(0)
             break
+    
+    if 1 in activities and 2 not in activities:
+        last_window_start = 0
+        last_window_start_index = 0
+        for i, time in enumerate(trace.data["ax"].timestamps):
+            if time > last_window_start + 30:
+                mean = np.mean(mag[last_window_start_index:i])
+                last_window_start_index = i
+                last_window_start = time
+                if mean > 0.7:
+                    activities.append(2)
+                    break
 
 
     if band_position == -1:

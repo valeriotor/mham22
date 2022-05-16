@@ -11,7 +11,7 @@ from scipy import signal
 import sys
 
 DATA_POINTS = 179
-filepath = './data/path_detection/'
+filepath = './data/'
 
 
 def filtered_trace(dataset):
@@ -126,15 +126,13 @@ def generate_data_path ():
 	return data_pressure, data_altitude, labels_pressure, labels_altitude
 
 
-def generate_data_path_trace (filename):
+def generate_data_path_trace (rec):
 	"""
 	Generate data for pressure and altitude path models.
 	"""
 	
 	data_pressure = []
 	data_altitude=[]
-	filename =filepath + filename
-	rec = Recording(filename, no_labels=True, mute=True)
 	new_input = []
 	if 'phone_pressure' in rec.data: 
 		time_series = np.array(rec.data['phone_pressure'].values)
@@ -172,14 +170,12 @@ def generate_data_activities_and_location (activity=None, location=None):
 	return data, labels
 
 
-def generate_data_activities_and_location_trace (filename):
+def generate_data_activities_and_location_trace (rec):
 	"""
 	Generate data for given trace for activity and location models.
 	"""
 
 	data = []
-	filename =filepath + filename
-	rec = Recording(filename, no_labels=True, mute=True)
 	new_input = []
 	time_series = create_energy_signal(rec, 'a')
 	new_input.extend(freq_features(time_series))
@@ -290,27 +286,27 @@ def train_final_model(X, y, model_name='', task='path'):
 # train_final_model (X, y, model_name='location_2', task='location')
 
 
-filename = sys.argv[1] # e.g. 'someDataTrace.json'
-def get_activities_confidences(filename):
+#filename = sys.argv[1] # e.g. 'someDataTrace.json'
+def get_activities_confidences(rec):
 	"""
 	Returns activity confidences for given filename.
 	"""
 
 	confidences = []
-	X = generate_data_activities_and_location_trace(filename)
+	X = generate_data_activities_and_location_trace(rec)
 	for i in range(4):
 		model = pkl.load(open(f'./pickled_models/model_activity_{i}.pkl', 'rb'))
 		confidences.append(model.predict_proba(X)[0][1])
 	return confidences
 #print(get_activities_confidences(filename))
 
-def get_locations_confidences(filename):
+def get_locations_confidences(rec):
 	"""
 	Returns locations confidences for given filename.
 	"""
 
 	confidences = []
-	X = generate_data_activities_and_location_trace(filename)
+	X = generate_data_activities_and_location_trace(rec)
 	for i in range(3):
 		model = pkl.load(open(f'./pickled_models/model_location_{i}.pkl', 'rb'))
 		confidences.append(model.predict_proba(X)[0][1])
@@ -318,13 +314,13 @@ def get_locations_confidences(filename):
 #print(get_locations_confidences(filename))
 
 
-def get_path(filename):
+def get_path(rec):
 	"""
-	Returns path index for given filename.
+	Returns path index for given recording.
 	"""
 
 	confidences = []
-	X_press, X_alt = generate_data_path_trace(filename)
+	X_press, X_alt = generate_data_path_trace(rec)
 	if len(X_press)>0:
 		model_downhill = pkl.load(open(f'./pickled_models/model_path_3_4_press.pkl', 'rb'))
 		model_uphill = pkl.load(open(f'./pickled_models/model_path_0_1_2_press.pkl', 'rb'))
@@ -340,7 +336,7 @@ def get_path(filename):
 	else:
 		path = 3 + np.argmax(model_downhill.predict_proba(X)[0])
 	return path
-print(f'Predicted path is: {get_path(filename)}')
+#print(f'Predicted path is: {get_path(filename)}')
 
 
 
